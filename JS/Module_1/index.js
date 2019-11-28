@@ -194,19 +194,19 @@ sdfsdfsdfsdfsdfsd
 // let b = 5;
 // console.log(b - a);
 
-// let a = 'join us';
-// let b = 'us';
+// let a = "join us";
+// let b = "us";
 // let result = a - b;
 // console.log(result);
 // console.log(typeof result);
 
 // let a = 10;
-// let b = '2';
+// let b = "2";
 // let c = 5;
 // console.log(a + b - c);
 
 // let a = 10;
-// let b = 'true';
+// let b = "true";
 // console.log(a - b);
 
 // *
@@ -216,11 +216,11 @@ sdfsdfsdfsdfsdfsd
 // console.log(a * b);
 
 // let a = 2;
-// let b = 'start';
+// let b = "start";
 // console.log(a * b);
 
 // let a = 2;
-// let b = '2.2';
+// let b = "2.2";
 // console.log(a * b);
 
 // let a = 10;
@@ -236,76 +236,124 @@ sdfsdfsdfsdfsdfsd
 // let b = 3;
 // console.log(a % b);
 
-// console.log('object');
-// alert('Hello');
+// let string = "Hello";
+// alert(string);
+// console.log("object");
 
-// let answer = prompt('How old are you');
+// let answer = prompt("How old are you");
 // console.log(answer);
 
-// let answer = confirm('Are you ready?');
+// let answer = confirm("Are you ready?");
 // console.log(answer);
 
-// let num1 = prompt('Enter number');
+// let num1 = prompt("Enter number");
+// // let result = +num1;
+// // console.log(result);
+// let result = Number(num1);
+// let b = 10;
+// console.log(10 + Number(num1));
 // let num2 = prompt('Enter number');
 // let num3 = prompt('Enter number');
 // console.log(Number(num3));
 // console.log(Number(num1) + Number(num2) + Number(num3));
 
-// let a = '2rem';
-// let b = '150px';
-// let c = '2.5vw';
-// let d = 'qweqw25';
+// let a = "20rem2";
+// let b = "150px";
+// let c = "2.5vw";
+// let d = "qweqw25";
+// parsewInt, parseFloat
+
+// let result = parseFloat(b);
+// console.log(result);
 
 // console.log(parseInt(a));
 // console.log(parseInt(b));
 // console.log(parseFloat(c));
 
-// let a = 0.1;
-// let b = 0.2;
+// let a = 100.1;
+// let b = 222.2;
+// let result = a + b;
+// let roundResult = result.toFixed(1);
+// let formatedResult = Number(roundResult);
+// console.log(formatedResult);
 // let result = a + b
 // console.log(result.toFixed(2));
 
-// let a = 'Hello';
+// let a = "Hello";
 // console.log(a.length);
-// console.log(a.toUpperCase());
-// console.log(a.toLowerCase());
+// let question = prompt("Login");
+// console.log(question.length);
+// console.log(question.toUpperCase());
+// console.log(question.toLowerCase());
+// console.log(a[0]);
+// let email = prompt("Enter your email");
+// console.log(email.includes("gmail", "@"));
 // console.log(a.includes('he'));
-// console.log(a.indexOf('e'));
+// console.log(a.indexOf("l"));
 // console.log(a.indexOf('ll'));
 
-// let name = 'Homer';
-// let lastName = 'Simpson';
-// let town = 'Springfield';
+// let name = "Homer";
+// let lastName = "Simpson";
+// let town = "Springfield";
 
-// console.log(name + lastName + 'lives' + 'in' + town);
-// console.log(`${name} ${lastName} lives in ${town}`);
+// console.log(name + " " + lastName + " " + "live in " + town);
+// console.log(`${name} ${lastName} live in ${town}`);
 
 // Logic and if
+
+// let age = prompt("Enter your age");
+
+// if (age < 18) {
+//   alert("Grow up");
+// } else {
+//   alert("Go to army");
+// }
+
+// 1) Отримати в користувача інформацію
+// 2) Перевірити з весною
+// 2.1) Якщо співпало то показуємо "Весна"
+// 2.2) Якщо не співпало перевіряємо з Літом
+// 3) Перевірити з літом
+// ...
+
+let month = Number(prompt("Enter month number"));
+if (month === 3 || month === 4 || month === 5) {
+  console.log("Весна");
+} else if (month > 5 && month < 9) {
+  console.log("Літо");
+} else if (month > 9 && month < 12) {
+  console.log("Осінь");
+} else if (month === 12 || month === 1 || month === 2) {
+  console.log("Зима");
+} else {
+  console.log("Введи число від 1 до 12");
+}
+
 // let a = 5;
-// let b = '5';
+// let b = "5";
 // console.log(a == b);
 // console.log(a === b);
 
 //
 // let a = NaN,
-//     b = NaN;
-// console.log(a != b);
-// console.log(a !== b);
+//   b = NaN;
+// // console.log(a != b);
+// // console.log(a !== b);
 // console.log(a == b);
 // console.log(a === b);
 
 // let a = 0,
-// b = null;
+//   b = null;
 // console.log(a == b);
 // console.log(a === b);
 //
 // let a = null,
-// b = null;
+//   b = null;
 // console.log(a == b);
 // console.log(a === b);
 
 // let a = null,
-// b = undefined;
+//   b = undefined;
 
 // console.log(a == b);
 // console.log(a === b);
@@ -441,4 +489,3 @@ sdfsdfsdfsdfsdfsd
 //     result = 'error';
 // }
 // result = password.length >= 4 || password ? 'correct' : 'error';
-

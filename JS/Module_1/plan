@@ -42,6 +42,7 @@ var, let, const.
 /
 *
 %
+///////////////////////////
 Інтерактивність
 alert, console.log
 prompt,confirm
