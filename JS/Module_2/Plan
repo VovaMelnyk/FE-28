@@ -1,0 +1,41 @@
+switch
+? :
+
+// loops
+loop template
+ while
+ do while
+ for
+ for of
+ for in
+// arr 
+
+ arr
+
+ length
+ pop
+ push
+ shift
+ unshift
+ slice
+ splice
+ indexOf
+ includes
+ concat
+ reverse
+ split
+ join
+
+ primitive and object
+
+ block scope
+
+function
+
+create
+expression and declaration
+run function
+return
+parameter and argument
+arguments 
+arrow functions
