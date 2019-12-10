@@ -190,22 +190,70 @@
 // console.log(result);
 // console.log(result2);
 
-const emails = ["user@gmail.com", "tester@gmail.com", "admin@gmail.com"];
-const anotherEmails = ["user2@gmail.com"];
-const userEmail = "admin@gmail.com";
-function checkEmailsExist(email, emailsArray) {
-  //   if (emailsArray.includes(email)) {
-  //     return true;
-  //   }
-  //   return false;
-  if (typeof email === "string") {
-    return emailsArray.includes(email);
-  }
-  return "Error";
-}
+// const emails = ["user@gmail.com", "tester@gmail.com", "admin@gmail.com"];
+// const anotherEmails = ["user2@gmail.com"];
+// const userEmail = "admin@gmail.com";
+// function checkEmailsExist(email, emailsArray) {
+//   //   if (emailsArray.includes(email)) {
+//   //     return true;
+//   //   }
+//   //   return false;
+//   if (typeof email === "string") {
+//     return emailsArray.includes(email);
+//   }
+//   return "Error";
+// }
 
-const result = checkEmailsExist(userEmail, emails);
-const result2 = checkEmailsExist(userEmail, anotherEmails);
+// const result = checkEmailsExist(userEmail, emails);
+// const result2 = checkEmailsExist(userEmail, anotherEmails);
 
-console.log(result);
-console.log(result2);
+// console.log(result);
+// console.log(result2);
+
+// function sum () {
+//   // console.log(arguments);
+//   let arr = Array.from(arguments);
+//   let total = 0
+//   for (let number of arr) {
+//     total += number
+//   }
+
+//   return total
+// }
+// console.log(sum(10,20, 40));
+// console.log(sum(12, 34));
+// console.log(sum(12,34,56,676,98));
+
+
+// const sum = function  (a, b) {
+//   return a + b
+// }
+
+// const sum = (a, b) => {
+//   return a + b
+// }
+
+// const sum = (a, b) => a + b
+
+// let a = 5
+// let b = 20 
+
+// function firstStep () {
+//   // let a = 10
+//   // let b = 15
+
+//   console.log('first',a);
+//   console.log('first',b);
+
+//   function secondStep() {
+//     let a = 50;
+//     let b = 200
+
+//     console.log('second',a);
+//     console.log('second',b);
+//   }
+
+//   secondStep()
+// }
+
+// firstStep()
