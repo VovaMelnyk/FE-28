@@ -1,13 +1,37 @@
-const car = {
-    maxSpeed: 300,
-    color: 'red',
-    engineType: 'electro',
-    model: 'X9',
-    mark: 'bmw',
-    price: 100000,
-    currency: 'USD',
-    isAutomat: false,
-}
+// const auto = {
+//     maxSpeed: 300,
+//     color: 'red',
+//     engineType: 'electro',
+//     model: 'X9',
+//     mark: 'bmw',
+//     price: 100000,
+//     currency: 'USD',
+//     isAutomat: false,
+//     isEngineOn: false,
+//     // startEngine: function() {
+//     //     car.isEngineOn = true
+//     // }
+//     startEngine() {
+//         this.isEngineOn = true
+//     },
+
+//     changePrice(newPrice) {
+//         this.price = newPrice
+//     },
+
+//     showModel() {
+//         return this.model
+//     },
+
+//     showMark() {
+//         return this.mark
+//     },
+
+//     showInfo() {
+//         // this = auto
+//         return `${this.showMark()} ${this.showModel()}`
+//     }
+// }
 
 // console.log(car.color);
 // console.log(car['price']);
@@ -96,6 +120,131 @@ const car = {
 // console.log(user);
 
 
+// auto.startEngine();
+// auto.changePrice(12000)
+// console.log(auto);
+
+// console.log(showInfo());
 
 
+// function a () {
 
+// }
+
+// const b = function () {
+
+// }
+
+
+// const c = () => {
+
+// }
+
+// for (let key in auto) {
+//     console.log(`${key}: ${auto[key]}`);
+// }
+
+// console.log(Object.keys(auto));
+// console.log(Object.values(auto));
+// console.log(Object.entries(auto));
+
+
+// let a = {
+//     x: 'b',
+//     y: 'c'
+// }
+
+// let b = {
+//     key1: 'x',
+//     key2: 'y'
+// }
+
+// let arr = [1,2,3,4,5];
+// // let newArr = arr.slice()
+// let newArr = [...arr];
+
+// let arr = [] // link1
+
+// let i = 0;
+// while (i < 3) {
+//     let userString = prompt('Enter string');
+//     arr = [...arr, userString] // link2
+//     i++
+// }
+
+// console.log(arr);
+
+// let a = {
+//     x: 1,
+//     y: 2
+// }
+
+// let b = {
+//     z: 5,
+//     y: 4
+// }
+
+// let c = {
+//     w: 7,
+//     z: 8
+// }
+
+// let final = {
+//     ...a,
+//     ...b,
+//     ...c
+// }
+
+// console.log(final);
+
+// const sum = (a,...args) => {
+//     console.log(args);
+// }
+
+// sum(1,2,3,4,5)
+
+// let user = {
+//     name: 'User',
+//     age: 23,
+//     isFrontend: true
+// }
+
+// let a = user.name;
+// let b = user.age;
+// let c = user.isFrontend;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// const  {age} = user;
+
+// console.log(surname); // const name = user.name
+// console.log(age); // const age = user.age
+// console.log(isFrontend); // const isFrontend = user.isFrontend
+// // console.log(gender);
+
+// function userInfo(name, lastName, age) {
+//     return `${name} ${lastName} ${age}`
+// }
+
+// console.log(userInfo('surname','34', 'name'));
+
+// function userInfo(userObject) {
+//     return `${userObject.name} ${userObject.lastName} ${userObject.age}`
+// }
+// console.log(userInfo({lastName: 'surname', age: '34', name: 'user'}));
+
+// function userInfo ({name, age}) {
+//     return `${name} ${age}`
+// }
+
+// console.log(userInfo({lastName: 'surname', age: '34', name: 'user'}));
+
+// let arr = [1,4,6];
+
+// // let a = arr[0];
+// // let b = arr[1];
+// // let c = arr[2];
+
+// const [b, a, c] = arr;
