@@ -1,0 +1,7 @@
+1) HOC functions
+2) callback function
+3) filter example with arr and test callback
+4) call stack lexical env
+5) Closure
+6) this (global, object, callback, arrow)
+7) call, apply, bind
