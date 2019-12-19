@@ -165,3 +165,83 @@
 
 // // user.showArrowThis();
 
+// call apply bind
+
+// const hotel = {
+//     name: 'Resort Hotel',
+//     price: 2500,
+// };
+// const hotel2 = {
+//     name: '4 Seasons Hotel',
+//     price: 500,
+// };
+// const hotel3 = {
+//     name: '7 days Hotel',
+//     price: 700,
+// };
+
+// hotel.showHotelInfo = function () {
+//     return `${this.name} ${this.price}`
+// }
+
+// console.log(hotel.showHotelInfo())
+
+// call apply
+
+// function showHotelInfo (name, period) {
+//     return `Hello ${name} ${this.name} ${this.price} total cost ${period * this.price}`
+// }
+
+// console.log(showHotelInfo.call(hotel,'Homer', 5));
+// console.log(showHotelInfo.call(hotel3, 'Bender', 10));
+
+// console.log(showHotelInfo.apply(hotel2,['Fry', 2]));
+
+// showHotelInfo = showHotelInfo.bind(hotel);
+
+// console.log(showHotelInfo('Homer', 3));
+
+// find([1,2,4,5], callback(5)) //5
+// find([1,2,4,5], callback(7)) // undefined
+// find([{name: 'User', age: 23}, {name: 'Tester', age: 34}], callback({obj.name === 'User'})) // {name: 'User', age: 23}
+
+// 1) Перебирати вхідний масив
+// 2) Робимо перевірку на обєкт (перевіряємо елемент масива на відповідність обєкту)
+// 3) передаємо елемент в наш callback
+// 4) callback робить перевірку і якщо елемент який нам потрібен то ми його повертаємо
+
+const find = (arr, callback) => {
+    for (let el of arr) {
+        let result = callback(el)
+        if (result) {
+            return el
+        }
+    }
+}
+
+// const checkNumber = number => number === 5
+
+
+const checkNewNumber = (number) => {
+    return number === 7
+}
+
+const findObj = (obj) => {
+    return obj.name === 'User'
+}
+
+// console.log(find([1,2,4,5],checkNumber));
+// console.log(find([1,2,4,5],checkNewNumber));
+
+console.log(find([1,2,4,5], number => number === 5));
+console.log(find([1,2,4,5],checkNewNumber));
+
+console.log(find([{name: 'User', age: 23}, {name: 'Tester', age: 34}], findObj));
+
+
+// create find method
+// create every method
+// create some method
+// create reduce method
+// create compact method //delete falsy values
+// parsing task
