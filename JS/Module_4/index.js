@@ -210,33 +210,33 @@
 // 3) передаємо елемент в наш callback
 // 4) callback робить перевірку і якщо елемент який нам потрібен то ми його повертаємо
 
-const find = (arr, callback) => {
-    for (let el of arr) {
-        let result = callback(el)
-        if (result) {
-            return el
-        }
-    }
-}
+// const find = (arr, callback) => {
+//     for (let el of arr) {
+//         let result = callback(el)
+//         if (result) {
+//             return el
+//         }
+//     }
+// }
 
 // const checkNumber = number => number === 5
 
 
-const checkNewNumber = (number) => {
-    return number === 7
-}
+// const checkNewNumber = (number) => {
+//     return number === 7
+// }
 
-const findObj = (obj) => {
-    return obj.name === 'User'
-}
+// const findObj = (obj) => {
+//     return obj.name === 'User'
+// }
 
 // console.log(find([1,2,4,5],checkNumber));
 // console.log(find([1,2,4,5],checkNewNumber));
 
-console.log(find([1,2,4,5], number => number === 5));
-console.log(find([1,2,4,5],checkNewNumber));
+// console.log(find([1,2,4,5], number => number === 5));
+// console.log(find([1,2,4,5],checkNewNumber));
 
-console.log(find([{name: 'User', age: 23}, {name: 'Tester', age: 34}], findObj));
+// console.log(find([{name: 'User', age: 23}, {name: 'Tester', age: 34}], findObj));
 
 
 // create find method
@@ -245,3 +245,79 @@ console.log(find([{name: 'User', age: 23}, {name: 'Tester', age: 34}], findObj))
 // create reduce method
 // create compact method //delete falsy values
 // parsing task
+
+// const every = (arr, cb) => {
+//     for(let element of arr) {
+//       let result = cb(element)
+//       if (result === false) {
+//           return false
+//       }
+//     }
+//     return true
+// }
+
+
+
+// const checkNumber = (number) => {
+//     if (number < 10 ) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+// every([1,20,3,4,5], checkNumber)
+
+// const some = (arr, cb) => {
+//     for(let element of arr) {
+//         let  result = cb(element)
+//         if(result === true) {
+//             return true
+//         }
+//     }
+//     return false
+// }
+
+// const checkSomeNumber = (num) => {
+//     // if (num > 10) {
+//     //     return true
+//     // } else {
+//     //     return false
+//     // }
+
+//     return num > 10
+// }
+
+// some([1,2,3,23,5], checkSomeNumber) // number > 10 // true
+
+// reduce([1,2,3,4,5], callback) // 15
+
+// 1) Перебрати масив (reduce)
+// 2) Створити змінну в яку буде накопичуватися сума (reduce)
+// 3) Сумуємо елемент і змінну з пункту 2 (callback)
+// 4) Повернути фінальний результат (акумулятор) (reduce)
+
+// const reduce = (arr, cb) => {
+//     let accum = 0
+
+//     for (let el of arr){
+//         accum = cb(accum, el)
+//     }
+//     return accum
+// }
+// const sumOfEls = (accum, el) =>{
+//     return accum += el
+
+// }
+// console.log(reduce([1,2,3,4,5], sumOfEls)) // 15
+
+compact([1,0,'', null, 'Hello']) // [1,'Hello']
+
+// 0) Створимо пустий масив
+// 1) Перебираємо масив
+// 2)Перевіряємо чи елементи масива дорівнюють true
+// 3) Якщо елемент = true тоді додаємо його в масив з пункта 0 
+// 4) Показати відповідь
+
+
+

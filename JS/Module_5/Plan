@@ -1,0 +1,33 @@
+ООП
+Клас
+Обєкт
+Інтерфейс
+Інкапсуляція
+Наслідування
+Поліморфізм
+
+
+Конструктор
+[[Call]] и [[Construct]]
+Constructor example
+
+Prototype
+__proto__ === [[Prototype]]
+Object.create()
+hasOwnProperty()
+Function.prototype
+
+extends
+User.call(this, name, age);
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.constructor = Admin;
+
+
+class
+method
+extends in class
+get set
+static
+
+
+
