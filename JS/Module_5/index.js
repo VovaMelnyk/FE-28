@@ -60,53 +60,237 @@
 // console.log(animal);
 // console.log(dog);
 
-function Phone (model, price, currency, color) {
-    // this = {}
-    this.model = model
-    this.price = price
-    this.currency = currency,
-    this.color = color,
-    this.power = '5000mA'
-    // this.changePower = function(number) {
-    //     this.power = number
+// function Phone (model, price, currency, color) {
+//     // this = {}
+//     this.model = model
+//     this.price = price
+//     this.currency = currency,
+//     this.color = color,
+//     this.power = '5000mA'
+//     // this.changePower = function(number) {
+//     //     this.power = number
+//     // }
+//     // this.showInfo = function () {
+//     //     return `${this.model}/${this.color}/${this.power}`
+//     // }
+//     // return this
+// }
+
+// //Phone.prototype = {constructor: template} // new Object
+
+// // Phone.prototype === LG.__proto__
+
+// Phone.prototype.changePower = function (number) {
+//     this.power = number
+// }
+
+// Phone.prototype.showInfo = function () {
+//     return `${this.model}/${this.color}/${this.power}`
+// }
+
+// // const LG = new Phone ('I3', 12000, 'UAH', 'black')
+// // const Nokia = new Phone ('Nokia', 10453, 'UAH', 'red')
+
+// function SmartPhone (model, price, currency, color, wifi = true ,bluetooht, camera) {
+//     // this = {}
+//     Phone.call(this, model, price, currency, color)
+//     // this = {model = model, price = price, currency = currency,color = color,power = '5000mA'}
+//     this.wifi = wifi,
+//     this.bluetooht = bluetooht,
+//     this.camera = camera
+// }
+
+// SmartPhone.prototype = Object.create(Phone.prototype)
+
+// SmartPhone.prototype.toggleCamera = function (bool) {
+//     this.camera = bool
+// }
+
+// const Iphone = new SmartPhone('I4', 12000, 'UAH', 'black',false, true, '5MP')
+
+// console.log(Iphone.showInfo());
+// console.log(Iphone);
+
+
+// class Counter {
+    // constructor (value) {
+    //     this.value = value
     // }
-    // this.showInfo = function () {
-    //     return `${this.model}/${this.color}/${this.power}`
+    // #value = 0
+    // inc() {
+    //     this.value++
     // }
-    // return this
+
+    // inc = () => {
+    //     this.value++
+    // }
+
+    // dec() {
+    //     this.value--
+    // }
+
+    // get newValue () {
+    //     return this.value / 2
+    // }
+
+    // set newValue (number) {
+    //     this.value = number * 2
+    // }
+// }
+
+// const c = new Counter (0)
+// c.inc()
+// c.inc()
+// c.dec()
+// // c.newValue = 10
+// // console.log(c.newValue);
+// console.log(c);
+
+
+// function listener (action) {
+//     action()
+// }
+
+// listener(c.inc)
+// console.log(c);
+
+
+// function Tank (x, y, armor, ammunition, color) {
+    // this.hp = 100;
+    // this.x = x;
+    // this.y = y;
+    // this.armor = armor;
+    // this.ammunition = ammunition;
+    // this.color = color;
+    // this.isBroken = false;
+// }
+
+// Tank.prototype.move = function (x, y) {
+    //  if (this.canMove()) {
+    //     this.x = x;
+    //     this.y = y;
+    // }
+// }
+
+// Tank.prototype.canFire = function () {
+//     return this.ammunition > 0
+// }
+
+// Tank.prototype.fire = function() {
+//     if(this.canFire()) {
+//         this.ammunition--
+//     }
+    
+// }
+// Tank.prototype.canHeal = function () {
+//     return this.hp < 100
+// }
+
+// Tank.prototype.heal = function(extraHp) {
+//     if(this.canHeal()) {
+//         if(this.hp + extraHp <= 100) {
+//             this.hp += extraHp
+//         } else {
+//             this.hp = 100
+//         }
+//     }
+// }
+
+// Tank.prototype.canMove = function() {
+//     if (this.hp <= 0) {
+//         this.isBroken = true
+//         return false
+//     } else {
+//         return true
+//     }
+// }
+
+// Tank.prototype.damage = function(damage) {
+//     this.hp -= damage
+// }
+
+class Tank {
+    constructor(x, y, armor, ammunition, color) {
+        // this {}
+        this.hp = 100;
+        this.x = x;
+        this.y = y;
+        this.armor = armor;
+        this.ammunition = ammunition;
+        this.color = color;
+        this.isBroken = false;
+        // this = {}
+
+        this.fire = this.fire.bind(this)
+    }
+
+    static showInfo () {
+        console.log(this);
+    }
+
+    move(x ,y) {
+        if (this.canMove()) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    canFire = () => {
+        return this.ammunition > 0
+    }
+
+    // fire =() => {
+    //     console.log('context', this);
+    //     if(this.canFire()) {
+    //         this.ammunition--
+    //     }
+        
+    // }
+
+    fire () {
+        console.log('context', this);
+        if(this.canFire()) {
+            this.ammunition--
+        }
+        
+    }
+// km => m
+    get ammunitionProgress () {
+        return this.ammunition * 100 / 10
+    }
+// m => km
+    set ammunitionProgress (value) {
+        this.ammunition = this.ammunition * value / 100
+    }
+
+    // calcProgres () {
+    //     return this.ammunition * 100 / 10
+    // }
 }
 
-//Phone.prototype = {constructor: template} // new Object
 
-// Phone.prototype === LG.__proto__
+// 100 - 10 
+// 80 - x
 
-Phone.prototype.changePower = function (number) {
-    this.power = number
-}
+// function listener (event, cb) {
+//     cb()
+// }
 
-Phone.prototype.showInfo = function () {
-    return `${this.model}/${this.color}/${this.power}`
-}
 
-// const LG = new Phone ('I3', 12000, 'UAH', 'black')
-// const Nokia = new Phone ('Nokia', 10453, 'UAH', 'red')
+const player1 = new Tank(0, 0, 50, 10, 'red');
 
-function SmartPhone (model, price, currency, color, wifi = true ,bluetooht, camera) {
-    // this = {}
-    Phone.call(this, model, price, currency, color)
-    // this = {model = model, price = price, currency = currency,color = color,power = '5000mA'}
-    this.wifi = wifi,
-    this.bluetooht = bluetooht,
-    this.camera = camera
-}
+// listener('click', player1.fire)
 
-SmartPhone.prototype = Object.create(Phone.prototype)
+// const player2 = new Tank(10, 10, 60, 8, 'black');
 
-SmartPhone.prototype.toggleCamera = function (bool) {
-    this.camera = bool
-}
+// player1.move(50, 50)
+// player1.fire()
+// player2.damage(23)
+// player1.move(100, 100)
+// let result = player1.calcProgres()
+console.log(player1.ammunitionProgress);
+player1.ammunitionProgress = 300
+console.log(player1);
+Tank.showInfo()
 
-const Iphone = new SmartPhone('I4', 12000, 'UAH', 'black',false, true, '5MP')
-
-console.log(Iphone.showInfo());
-console.log(Iphone);
+// console.log(result);

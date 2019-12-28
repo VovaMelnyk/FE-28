@@ -28,6 +28,7 @@ method
 extends in class
 get set
 static
+private fields
 
 
-
+Tank
