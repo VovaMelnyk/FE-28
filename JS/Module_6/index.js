@@ -1,14 +1,4 @@
-// async function getData () {
-//     let result = null
-//     let response = await fetch('https://restcountries.eu/rest/v2/all')
-//     result = await response.json()
-//     return result
-// }
 
-// getData().then(data => localStorage.setItem('arr', JSON.stringify(data)));
-
-// const arr = JSON.parse(localStorage.getItem('arr'))
-// console.log(arr);
 // let numbers = [1,4,6,7,8,9]
 // console.log(numbers);
 
@@ -172,3 +162,166 @@
 //     .filter(el => el.type === 'electronic')
 //     .reduce((acc , el) => acc + el.price, 0)
 // console.log(totalElectronicPrice);
+
+// const scientist = [
+//   {
+//     name: "Albert",
+//     surname: "Einstein",
+//     born: 1879,
+//     dead: 1955,
+//     id: 1
+//   },
+//   {
+//     name: "Isaac",
+//     surname: "Newton",
+//     born: 1643,
+//     dead: 1727,
+//     id: 2
+//   },
+//   {
+//     name: "Galileo",
+//     surname: "Galilei",
+//     born: 1564,
+//     dead: 1642,
+//     id: 3
+//   },
+//   {
+//     name: "Marie",
+//     surname: "Curie",
+//     born: 1867,
+//     dead: 1934,
+//     id: 4
+//   },
+//   {
+//     name: "Johannes",
+//     surname: "Kepler",
+//     born: 1571,
+//     dead: 1630,
+//     id: 5
+//   },
+//   {
+//     name: "Nicolaus",
+//     surname: "Copernicus",
+//     born: 1473,
+//     dead: 1543,
+//     id: 6
+//   },
+//   {
+//     name: "Max",
+//     surname: "Planck",
+//     born: 1858,
+//     dead: 1947,
+//     id: 7
+//   },
+//   {
+//     name: "Katherine",
+//     surname: "Blodgett",
+//     born: 1898,
+//     dead: 1979,
+//     id: 8
+//   },
+//   {
+//     name: "Ada",
+//     surname: "Lovelace",
+//     born: 1815,
+//     dead: 1852,
+//     id: 9
+//   },
+//   {
+//     name: "Sarah E.",
+//     surname: "Goode",
+//     born: 1855,
+//     dead: 1905,
+//     id: 10
+//   },
+//   {
+//     name: "Lise",
+//     surname: "Meitner",
+//     born: 1878,
+//     dead: 1968,
+//     id: 11
+//   },
+//   {
+//     name: "Hanna",
+//     surname: "Hammarström",
+//     born: 1829,
+//     dead: 1909,
+//     id: 12
+//   }
+// ];
+
+// 1) отримати масив вчених що народилися в 19 ст
+// 2) знайти суму років скільки прожили всі вченні
+// 3) Відсортувати вчених по алфавіту
+// 5) Відсортувати вчених по кількості прожитих років
+// 6) Видалити з масива вчених що народилися в 15 або 16 або 17 столітті
+// 7) Знайти вченого який народився найпізніше.
+// 8) Знайти рік народження Albert Einstein
+// 9) Знайти вчених прізвище яких починається на літеру С
+// 10) Видалити з масива всіх вчених імя яких починається на A
+// 11) Знайти вченого який прожив найбільше і вченого який прожив найменьше
+// 12) Знайти вчених в яких співпадають перші літери імені і прізвища
+// 13) Дізнатися чи всі вченні працювали в 19 столітті
+
+// const  task1 = scientist.filter(obj => obj.born > 1800 && obj.born <= 1899)
+// console.log(task1);
+
+// // const sum = scientist.map(item => item.dead - item.born)
+// // .reduce((acc, item) => acc + item)
+
+// const sum1 = scientist.reduce ((arr, item) => arr +(item.dead - item.born), 0)
+// // console.log(sum);
+// console.log(sum1);
+
+// const sortTechOnAl = [...scientist].sort((a,b) => a.name < b.name ? -1 : 1);
+// console.log(sortTechOnAl);
+
+// const sortScientistLife = [...scientist].sort((a,b) => (b.dead - b.born) - (a.dead - a.born))
+// console.log(sortScientistLife);
+
+// const delScientist = scientist.filter(obj => obj.born <=1400 || obj.born>1800)
+// console.log(delScientist);
+
+// const youngestSc = [...scientist].sort((a,b)=>b.born - a.born)[0].name;
+// console.log(youngestSc);
+
+// const albertFind = scientist.find(obj => obj.name === 'Albert' && obj.surname==='Einstein').born 
+// console.log(albertFind)
+
+// const surnameC = scientist.filter(el => el.surname[0] === 'C');
+// console.log(surnameC);
+
+// const deleteA = scientist.filter(el => el.name[0] !== "A")
+
+// console.log(deleteA);
+
+// const oldAndYoung = [...scientist].sort((a, b) => (a.dead - a.born) - (b.dead - b.born))
+// const arr =[];
+// arr.push(oldAndYoung[0], oldAndYoung[oldAndYoung.length-1])
+
+// const isWork = scientist.every(el => el.dead < 1800)
+// console.log(isWork);
+
+// async function getData () {
+//     let result = null
+//     let response = await fetch('https://restcountries.eu/rest/v2/all')
+//     result = await response.json()
+//     return result
+// }
+
+// getData().then(data => localStorage.setItem('arr', JSON.stringify(data)));
+
+// const arr = JSON.parse(localStorage.getItem('arr'))
+// console.log(arr);
+
+// function findBorders (countryName, countryArray) {
+//     const countryCode = countryArray.find(el => el.name === countryName).alpha3Code
+//     const result = countryArray
+//         .filter(el => el.borders.includes(countryCode))
+//         .map(el => el.name)
+//     return result
+// }
+
+// console.log(findBorders('Switzerland', arr));
+
+
