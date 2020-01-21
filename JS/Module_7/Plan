@@ -1,0 +1,64 @@
+DOM
+Методи пошуку в DOM
+querySelectorAll
+querySelector
+document.getElementById
+document.getElementsByTagName
+document.getElementsByClassName
+
+Навігація по DOM
+parentNode, 
+children, 
+firstElementChild, 
+lastElementChild, 
+previousElementSibling, 
+nextElementSibling
+
+Атрибути
+
+classList
+elem.classList.length
+elem.classList.contains(cls)
+elem.classList.add(cls)
+elem.classList.remove(cls)
+elem.classList.toggle(cls)
+
+attribute
+elem.hasAttribute(name)
+elem.getAttribute(name)
+elem.setAttribute(name, value)
+elem.removeAttribute(name)
+style
+value
+data-attribute
+
+Створення і вставка контента
+document.createElement('h1')
+container.append(element)
+container.prepend(element)
+container.after(element)
+container.before(element)
+
+Видалення, заміна  і клонування
+
+elem.cloneNode(true)
+node.replaceWith(nodes)
+elem.remove(),
+
+Додавання текстового контенту
+
+textContent
+
+Створення і вставка контента через строку
+
+innerHTML
+insertAdjacentHTML
+beforebegin - перед елементом
+afterend - після елемента
+afterbegin - Всередині елемента спочатку
+beforeend - Всередині елемента вкінці
+
+elem.insertAdjacentHTML(position, string)
+
+
+Events
