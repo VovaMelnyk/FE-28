@@ -7,11 +7,11 @@
 // console.log(list.lastElementChild);
 // console.log(list.previousElementSibling);
 // console.log(list.nextElementSibling);
-// parentNode, 
-// children, 
-// firstElementChild, 
-// lastElementChild, 
-// previousElementSibling, 
+// parentNode,
+// children,
+// firstElementChild,
+// lastElementChild,
+// previousElementSibling,
 // nextElementSibling
 
 // const liCollection = document.querySelectorAll('.list__item')
@@ -80,3 +80,114 @@
 // afterbegin - Всередині елемента спочатку
 // beforeend - Всередині елемента вкінці
 // list.insertAdjacentHTML('beforeend', newLi)
+// fetch("https://servertest-e045e.firebaseio.com/decks.json")
+//   .then(res => res.json())
+//   .then(data => console.log(data));
+
+// fetch("https://servertest-e045e.firebaseio.com/test.json", {
+//   method: "POST",
+//   body: JSON.stringify([1, 2, 4, 5])
+// })
+//   .then(res => res.json())
+//   .then(data => console.log(data));
+
+// fetch("https://news-9cced.firebaseio.com/post.json")
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//     console.log(Object.keys(data));
+//     const result = Object.keys(data).map(post => ({
+//       ...data[post],
+//       id: post
+//     }));
+//     console.log(result);
+//   })
+// click
+// dbclick
+// contexmenu
+// scroll
+// onchange
+// input
+// keyup
+// keydown
+// keypress
+// DOMcontentLoaded
+// dragEnd
+// dragStart
+// mouseover
+// tarnsintionend
+
+const btn = document.querySelector("button");
+// const hello = () => {
+//   alert('Hello user')
+//   btn.removeEventListener('click', start)
+//   // btn.addEventListener('click', buy)
+// }
+// const buy = () => {
+//   alert('Another click')
+// }
+
+// const start = () => {
+//   hello()
+//   buy()
+// }
+// console.log(btn);
+// const eventInfo = (e) => {
+//   console.log(e.target);
+// }
+// btn.addEventListener('click', eventInfo)
+// btn.addEventListener('click', buy)
+// btn.addEventListener('click', function() {
+//   alert('Hello')
+// })
+
+// const box1 = (e) => {
+//   e.stopPropagation()
+//   e.preventDefault()
+//   alert("box 1");
+//   console.log(e);
+// };
+
+// const boxCollection = document.querySelectorAll(".box");
+// console.log(boxCollection);
+// boxCollection.forEach(el => el.addEventListener("click", box1));
+
+// let price = document.querySelector('#price');
+// let quantity = document.querySelector('#quantity');
+// let totalP = document.querySelector('.total');
+// let amount = document.querySelector('.amount');
+// let form = document.querySelector('.form');
+
+// function calc() {
+//     let total = price.value * quantity.value;
+//     totalP.textContent = total.toFixed(2) + 'грн';
+//     amount.textContent = quantity.value;
+// }
+// form.addEventListener('input', calc);
+// window.addEventListener('DOMContentLoaded', calc);
+
+// const price = document.querySelector("#price");
+// const amount = document.querySelector("#quantity");
+// const form = document.querySelector(".form");
+// const total = document.querySelector(".total");
+// const span = document.querySelector('.amount');
+
+// function calc(price, amount, total, span) {
+//   const result = price.value * amount.value;
+//   total.textContent = `${result.toFixed(2)} грн`;
+//   span.textContent = amount.value
+//   console.log(result);
+// }
+
+// form.addEventListener('input', function (e) {
+//   console.log(e);
+//   calc(price, amount,total, span)
+// })
+// window.addEventListener('DOMContentLoaded', function () {
+//   calc(price, amount,total, span)
+// })
+
+
+// input
+// onchange
+// submit

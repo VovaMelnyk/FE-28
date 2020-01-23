@@ -62,3 +62,9 @@ elem.insertAdjacentHTML(position, string)
 
 
 Events
+
+1) addEvent
+2) removeEvent
+3) занурення
+4) підняття
+5) e.preventDefault e.stopPropogation
