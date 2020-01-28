@@ -117,7 +117,7 @@
 // mouseover
 // tarnsintionend
 
-const btn = document.querySelector("button");
+// const btn = document.querySelector("button");
 // const hello = () => {
 //   alert('Hello user')
 //   btn.removeEventListener('click', start)
@@ -191,3 +191,33 @@ const btn = document.querySelector("button");
 // input
 // onchange
 // submit
+// const items = ['Home', 'Company', 'About us', 'Help']
+// const root = document.querySelector('#root')
+// const btn = document.querySelector('button')
+// const list = document.createElement('ul');
+// list.classList.add('hide')
+// function createLi(text) {
+//     const li = document.createElement('li');
+//     const a  = document.createElement('a');
+
+//     li.classList.add('item')
+//     a.classList.add('link')
+
+//     a.href='#';
+
+//     a.textContent = text
+
+//     li.append(a)
+
+//     return li
+// }
+// const menu = items.map(menuItem => createLi(menuItem))
+// list.append(...menu)
+// root.append(list)
+
+// function toggleMenu () {
+//     list.classList.toggle('show')
+// }
+
+// btn.addEventListener('click',toggleMenu)
+

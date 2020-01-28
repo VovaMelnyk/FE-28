@@ -86,3 +86,11 @@ input {
     border-radius: 3px;
     color: #fff;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

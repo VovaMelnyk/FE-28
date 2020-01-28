@@ -1,26 +1,26 @@
-const path = require("path");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetWebpackPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.NODE_ENV === 'development';
 // console.log(isDev);
 const isProd = !isDev;
 const optimization = () => {
   const config = {
     splitChunks: {
-      chunks: "all"
-    }
+      chunks: 'all',
+    },
   };
 
   if (isProd) {
     config.minimizer = [
       new OptimizeCssAssetWebpackPlugin(),
-      new TerserWebpackPlugin()
+      new TerserWebpackPlugin(),
     ];
   }
 
@@ -30,16 +30,16 @@ const optimization = () => {
 const jsLoaders = () => {
   const loaders = [
     {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
-        presets: ["@babel/preset-env"],
-        plugins: ["@babel/plugin-proposal-class-properties"]
-      }
-    }
+        presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      },
+    },
   ];
 
   if (isDev) {
-    loaders.push("eslint-loader");
+    loaders.push('eslint-loader');
   }
 
   return loaders;
@@ -50,21 +50,21 @@ const filename = ext => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 const plugins = () => {
   const base = [
     new HTMLWebpackPlugin({
-      template: "./index.html",
+      template: './index.html',
       minify: {
-        collapseWhitespace: isProd
-      }
+        collapseWhitespace: isProd,
+      },
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, "src/favicon.ico"),
-        to: path.resolve(__dirname, "dist")
-      }
+        from: path.resolve(__dirname, 'src/favicon.ico'),
+        to: path.resolve(__dirname, 'dist'),
+      },
     ]),
     new MiniCssExtractPlugin({
-      filename: filename("css")
-    })
+      filename: filename('css'),
+    }),
   ];
 
   if (isProd) {
@@ -75,21 +75,21 @@ const plugins = () => {
 };
 
 module.exports = {
-  context: path.resolve(__dirname, "src"),
-  mode: "development",
+  context: path.resolve(__dirname, 'src'),
+  mode: 'development',
   entry: {
-    main: ["@babel/polyfill", "./index.js"],
-    analytic: "./analytic.js"
+    main: ['@babel/polyfill', './index.js'],
+    analytic: './analytic.js',
   },
   output: {
-    filename: filename("js"),
-    path: path.resolve(__dirname, "dist")
+    filename: filename('js'),
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: [".js", ".json", ".css", ".png", ".jpg"],
+    extensions: ['.js', '.json', '.css', '.png', '.jpg'],
     alias: {
-      "@": path.resolve(__dirname, "src")
-    }
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
 
   optimization: optimization(),
@@ -99,24 +99,24 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ["file-loader"]
+        use: ['file-loader'],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ["file-loader"]
+        use: ['file-loader'],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: jsLoaders()
-      }
-    ]
+        use: jsLoaders(),
+      },
+    ],
   },
   devServer: {
-    port: 8080
-  }
+    port: 8080,
+  },
 };

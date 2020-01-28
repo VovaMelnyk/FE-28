@@ -59,3 +59,4 @@
 54) babel plugin (show static error and fix) (npm install --save-dev @babel/plugin-proposal-class-properties)
 55) eslint (npm i -D eslint-loader babel-eslint eslint)
 56) webpack-analyzer (npm i -D webpack-bundle-analyzer)
+57) npm install --save-dev babel-preset-airbnb
