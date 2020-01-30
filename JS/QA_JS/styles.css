@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ee6e73;
+    min-height: 100vh;
+}
+
+main {
+    padding: 50px 30px;
+    flex-grow: 1;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.wrapper .collection .list__item {
+    min-height: initial
+}
