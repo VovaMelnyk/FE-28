@@ -86,7 +86,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.js', '.json', '.css', '.png', '.jpg'],
+    extensions: ['.js', '.json', '.css', '.png', '.jpg', '.scss'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
@@ -100,6 +100,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
