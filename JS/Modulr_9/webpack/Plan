@@ -1,0 +1,44 @@
+0) Cтворити src папку
+1) Cтворити package.json (npm init)
+2) Додати webpack і webpack-cli (npm i -D webpack webpack-cli)
+3) Створити webpack.config.js
+4) Створити обєкт налаштувань module.exports = {}
+5) Додати точку входу (entry{})
+6) Додати точку вигрузки (output{filename, path})
+6.1) Додати модуль path з node.js для коректних шляхів (const path = require('path');)
+7) Тестовий запуск (webpack)
+8) Додати режим development (mode: 'development',)
+9) check
+10) Захист від кешування файлів (filename: '[name].[contenthash].js')
+11) Автопідключення скріптів в html (plugins - це все класи)
+12) Додавання html-webpack-plugin (npm i -D html-webpack-plugin)
+13) Налаштування html-webpack-plugin (new HTMLWebpackPlugin({
+            template: './src/index.html'
+        }))
+14) check
+15) Очистка папки dist (npm i -D clean-webpack-plugin)
+16) Налаштування CleanWebpackPlugin() (імпорт і підключення new CleanWebpackPlugin())
+17) Додавання нових скриптів (dev i build in package.json) (  "dev" : "webpack --mode development", "build": "webpack --mode production")
+18) check
+19) Додавання context для зручнішого написання конфіга (context: path.resolve(__dirname, 'src'),)
+20) Навчити webpack працювати зі стилями (mini-css-extract-plugin css-loader)
+21) Додати правила для css (module : {rules: [{test: /\.css$/, use: []}]}) (Додати в плагіни)
+22) Додати роботу з файлами (npm i -D file-loader)
+23) Налаштувати роботу з картинками і шрифтами
+24) Робота з розширенями файлів resolve (resolve: {
+    extensions: [],
+    alias: {
+        @: path.resolve(__dirname, 'src')
+    }
+})
+25) Додати автооновлення сторінки без перезапуску збірки (npm i -D webpack-dev-server)
+26) Налаштувати webpack-dev-server 
+    devServer: {
+        port: 8080,
+    },
+27) Додати скрипт що буде стартувати збірку (npm start) ("start": "webpack-dev-server --mode development --open")
+28) Додати babel до збірки (npm i -D babel-loader @babel/core)
+29) Додаванни пресета до babel (npm i -D @babel/preset-env)
+30) Додати поліфіл для роботи з асинхроними ф-ями (npm install -S @babel/polyfill) 
+31) Підключити поліфіл (змінити entry)
+32) Додавання плагіна до babel (npm i -D @babel/plugin-proposal-class-properties)

@@ -42,25 +42,27 @@
 37) add fonts
 38) resolve (show default file extensions)
 39) alias
-40) add library to project (npm i -S moment)
-41) library optimization
-42) dev server (config)(store all data in RAM)
-43) npm i -D webpack-dev-server
-44) start script (hot reload)
-45) npm i -D copy-webpack-plugin ?
-46) add plugin for separate css (npm i -D mini-css-extract-plugin)
-47) cross-env (npm i -D cross-env)
-48) change scripts (add cross-env)
-49) minify html (minify)
-50) minify css (npm install terser-webpack-plugin optimize-css-assets-webpack-plugin --save-dev)
-51) add babel (npm install --save-dev babel-loader @babel/core)
-52) add presets (npm install --save-dev @babel/preset-env)
-53) npm install --save @babel/polyfill
-54) babel plugin (show static error and fix) (npm install --save-dev @babel/plugin-proposal-class-properties)
-55) eslint (npm i -D eslint-loader babel-eslint eslint)
+40) add library to project (npm i -S moment) -
+41) library optimization -
+42) dev server (config)(store all data in RAM) +
+43) npm i -D webpack-dev-server +
+44) start script (hot reload) +
+45) npm i -D copy-webpack-plugin ? -
+46) add plugin for separate css (npm i -D mini-css-extract-plugin) -
+47) cross-env (npm i -D cross-env) -
+48) change scripts (add cross-env) -
+49) minify html (minify) -
+50) minify css (npm install terser-webpack-plugin optimize-css-assets-webpack-plugin --save-dev) -
+51) add babel (npm install --save-dev babel-loader @babel/core) +
+52) add presets (npm install --save-dev @babel/preset-env) +
+53) npm install --save @babel/polyfill +
+54) babel plugin (show static error and fix) (npm install --save-dev @babel/plugin-proposal-class-properties) +
+55) eslint (npm i -D eslint-loader babel-eslint eslint) +
 56) webpack-analyzer (npm i -D webpack-bundle-analyzer)
 
 
 
 sudo npm install -g --unsafe-perm node-sass
+sudo npm install -D --unsafe-perm node-sass
+
 

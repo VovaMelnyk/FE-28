@@ -1,0 +1,9 @@
+1) Node.js
+2) run script without browser
+3) npm
+4) npm commands (npm init, npm install, npm install axios, npm uninstall axios, npm star, npm test, npm run dev, npm outdated, npm update)
+4.1) Create package.json (npm init) (npm i -D, npm i -S, npm i -g)
+5) npm version ("moment": "2.24.0")
+6) common js modules
+7) import export
+8) webpack
