@@ -1,0 +1,78 @@
+.user-container {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+}
+.card {
+    display: grid;
+}
+.card .button {
+    align-self: end;
+}
+
+
+/* Simple Card styles for prettying */
+
+html {
+    font-size: 16px;
+    /* font-family: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif; */
+}
+
+body {
+    background-color: #efefef;
+    transition: 0.5s;
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+}
+* {
+    box-sizing: border-box;
+}
+.card {
+    box-shadow: 0px 1px 5px #555;
+    background-color: white;
+}
+.card__title {
+    font-size: 23px;
+    padding: 10px;
+}
+.card__description {
+    padding: 10px;
+    line-height: 34px;
+}
+
+.user-table {
+    width: 100%;
+}
+
+.user-table td {
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.user-table tr:nth-child(2n+2) {
+    background-color: #ddd;
+}
+
+.day {
+    color: #000;
+    background-color: #efefef;
+}
+
+.night {
+    color: #fff;
+    background-color: #000;
+}
+
+.serif {
+    font-family: 'Arial';
+}
+
+.sans-serif {
+    font-family: 'Time New Roman';
+}
+
+:root {
+    --fontFamily: 'Arial';
+    --fontSize: 16px;
+}
