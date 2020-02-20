@@ -5,3 +5,14 @@
  timeout and interval delay
  date (new Date() getDate, getMonth, getFullYear, getDay, getTime, getHours, getMinutes, getSeconds, getMileseconds)
  Event loop
+
+Promise
+finally
+promise.chaining
+Promise.all
+Promise.race
+Promise.allSettled()
+Promise.resolve(), 
+Promise.reject()
+Promise.finally()
+switch callback to promise

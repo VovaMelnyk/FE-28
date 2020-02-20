@@ -99,139 +99,142 @@
 
 // stopwatch
 
-class Stopwatch {
-  constructor() {
-    this.timerId = null;
-    this.dateStart = null;
-    this.startBtn = document.querySelector("#start");
-    this.stopBtn = document.querySelector("#stop");
-    this.sec = document.querySelector(".seconds");
-    this.min = document.querySelector(".minutes");
-    this.hours = document.querySelector('.hours')
+// class Stopwatch {
+//   constructor() {
+//     this.timerId = null;
+//     this.dateStart = null;
+//     this.startBtn = document.querySelector("#start");
+//     this.stopBtn = document.querySelector("#stop");
+//     this.sec = document.querySelector(".seconds");
+//     this.min = document.querySelector(".minutes");
+//     this.hours = document.querySelector('.hours')
 
-    this.action = this.action.bind(this);
-    this.start = this.start.bind(this);
-    this.stop = this.stop.bind(this);
-  }
+//     this.action = this.action.bind(this);
+//     this.start = this.start.bind(this);
+//     this.stop = this.stop.bind(this);
+//   }
 
-  action() {
-    const delta = Date.now() - this.dateStart;
-    //   console.log(delta);
-    const sec = Math.floor((delta / 1000) % 60);
-    const minutes = Math.floor((delta / 1000 / 60) % 60);
-    const hours = Math.floor((delta / 1000 / 60 / 60) % 24);
+//   action() {
+//     const delta = Date.now() - this.dateStart;
+//     //   console.log(delta);
+//     const sec = Math.floor((delta / 1000) % 60);
+//     const minutes = Math.floor((delta / 1000 / 60) % 60);
+//     const hours = Math.floor((delta / 1000 / 60 / 60) % 24);
 
-    this.sec.textContent = sec < 10 ? `0${sec}` : sec;
-    this.min.textContent = minutes < 10 ? `0${minutes}`: minutes;
-    this.hours.textContent = hours < 10 ? `0${hours}` : hours
-  }
+//     this.sec.textContent = sec < 10 ? `0${sec}` : sec;
+//     this.min.textContent = minutes < 10 ? `0${minutes}`: minutes;
+//     this.hours.textContent = hours < 10 ? `0${hours}` : hours
+//   }
 
-  start() {
-    this.timerId = setInterval(this.action, 500);
-    this.dateStart = Date.now();
-  }
+//   start() {
+//     this.timerId = setInterval(this.action, 500);
+//     this.dateStart = Date.now();
+//   }
 
-  stop() {
-    clearInterval(this.timerId);
-  }
+//   stop() {
+//     clearInterval(this.timerId);
+//   }
 
-  init() {
-    this.startBtn.addEventListener("click", this.start);
-    this.stopBtn.addEventListener("click", this.stop);
-  }
+//   init() {
+//     this.startBtn.addEventListener("click", this.start);
+//     this.stopBtn.addEventListener("click", this.stop);
+//   }
+// }
+
+// const watch = new Stopwatch();
+// watch.init();
+//  ===============================
+// Promises
+
+// pending - Очікування
+// resolve - Виконано
+// rejected - помилка
+
+// template
+
+// const firstPromise = new Promise((ok, err) =>{
+// })
+
+// const promise = new Promise((resolve, reject) => {
+//   const arr = [];
+//   for (let i = 0; i < 100000000; i++) {
+//     arr.push(i);
+//   }
+//   const sum = arr.reduce((acc, el) => acc + el);
+
+//   if (sum % 2 !== 0) {
+//     resolve(sum);
+//   } else {
+//     reject("Error");
+//   }
+// });
+
+// promise.then(
+//   response => console.log(response),
+//   err => console.log(err)
+// );
+
+// promise
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
+
+function asyncLoop(count) {
+  return new Promise((resolve, reject) => {
+    const arr = [];
+    for (let i = 0; i < count; i++) {
+      arr.push(i);
+    }
+    const sum = arr.reduce((acc, el) => acc + el);
+
+    if (sum % 2 !== 0) {
+      resolve(sum);
+    } else {
+      reject("Error");
+    }
+  });
 }
 
-const watch = new Stopwatch();
-watch.init();
+// let thenResult = null;
 
-// let secText = document.querySelector('.seconds');
-// let minText = document.querySelector('.minutes');
-// let hoursText = document.querySelector('.hours');
-// let daysText = document.querySelector('.days');
+// asyncLoop(100000034)
+//   .then(num => num / 2)
+//   .then(result => (thenResult = result))
+//   .then(() => console.log(object))
+//   .catch(err => console.log(err))
+//   .finally(() => console.log("hello"));
 
-// const deadline = new Date(2020, 0, 1, 0, 0, 0);
+// console.log(thenResult);
 
-// function timer() {
-//     const today = new Date();
+// Promise.all([asyncLoop(12), asyncLoop(26), asyncLoop(15)])
+// .then(res =>
+//   console.log(res)
+// );
 
-//     const delta = deadline - today;
+// Promise.race([asyncLoop(35), asyncLoop(10)])
+// .then(data => console.log(data))
 
-//     const sec = Math.floor(delta / 1000) % 60;
-//     const min = Math.floor(delta / 1000 / 60) % 60;
-//     const hours = Math.floor(delta / 1000 / 60 / 60) % 24;
-//     const day = Math.floor(delta / 1000 / 60 / 60 / 24);
+// Promise.all([asyncLoop(10), asyncLoop(100000), asyncLoop(1000000)])
+//   .then(result => console.log(result))
+//   .catch(err => console.log(err));
 
-//     secText.textContent = sec < 10 ? `0${sec}` : sec;
-//     minText.textContent = min < 10 ? `0${min}` : min;
-//     hoursText.textContent = hours < 10 ? `0${hours}` : hours;
-//     daysText.textContent = day < 10 ? `0${day}` : day;
-//     // console.log(day);
+// Promise.allSettled([asyncLoop(12), asyncLoop(100000), asyncLoop(1000000)])
+//   .then(result => console.log(result))
+//   .catch(err => console.log(err));
+
+// function userAsk(callback) {
+//     const answer = prompt('How are you')
+
+//     callback(answer)
 // }
 
-// setInterval(timer, 1000);
+// const log = text => console.log(text);
 
-// class Timer {
-//     constructor(secClassName, minClassName, hoursClassName, daysClassName, deadline) {
-//         this.secText = document.querySelector(secClassName);
-//         this.minText = document.querySelector(minClassName);
-//         this.hoursText = document.querySelector(hoursClassName);
-//         this.daysText = document.querySelector(daysClassName);
-//         this.deadline = new Date(deadline.year, deadline.month, deadline.date, deadline.hour, deadline.minute, deadline.sec)
+// userAsk(log)
 
-//         this.logic = this.logic.bind(this);
-//     }
+// function userAsk() {
+//     const answer = prompt('How are you')
 
-//     logic() {
-//         const today = new Date();
-//         const delta = this.deadline - today;
-//         const sec = Math.floor(delta / 1000) % 60;
-//         const min = Math.floor(delta / 1000 / 60) % 60;
-//         const hours = Math.floor(delta / 1000 / 60 / 60) % 24;
-//         const day = Math.floor(delta / 1000 / 60 / 60 / 24);
-
-//         this.secText.textContent = sec < 10 ? `0${sec}` : sec;
-//         this.minText.textContent = min < 10 ? `0${min}` : min;
-//         this.hoursText.textContent = hours < 10 ? `0${hours}` : hours;
-//         this.daysText.textContent = day < 10 ? `0${day}` : day;
-//     }
-
-//     start() {
-//         setInterval(this.logic, 1000);
-//     }
+//    return Promise.resolve(answer)
 // }
 
-// const result = new Timer('.seconds', '.minutes', '.hours', '.days', {
-//     year: 2020,
-//     month: 0,
-//     date: 1,
-//     hour: 0,
-//     minute: 0,
-//     sec: 0
-// });
-// result.start();
-// console.log(result);
-
-// const deadline = new Date(2019, 8, 29)
-// let secText = document.querySelector('.seconds');
-// let minText = document.querySelector('.minutes');
-// let hoursText = document.querySelector('.hours');
-// let daysText = document.querySelector('.days');
-// function timer() {
-//     const today = new Date();
-//     let result = deadline - today;
-//     let sec = Math.floor(result / 1000);
-//     let min = Math.floor(sec / 60);
-//     let hours = Math.floor(min / 60);
-//     let days = Math.floor(hours / 24);
-//     sec = sec % 60;
-//     min = min % 60;
-//     hours = hours % 24;
-//     // days = days;
-
-//     secText.textContent = sec < 10 ? `0${sec}`: sec;
-//     minText.textContent = min < 10 ? `0${min}`: min;
-//     hoursText.textContent = hours < 10 ? `0${hours}`: hours;
-//     daysText.textContent = days < 10 ? `0${days}`: days;
-// }
-
-// setInterval(timer, 1000)
+// userAsk().then(data => console.log(data))
