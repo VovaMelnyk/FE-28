@@ -1,0 +1,16 @@
+TCP/IP
+HTTP/HTTPS
+DNS => Connect => Request => Pending => Get Data;
+API and REST
+4 request methods (GET,POST,PUT,DELETE)
+Headers
+Codes 100 => 200 => 300 => 400 => 500 =>
+Create url
+fetch
+Network
+https://pixabay.com/api/docs/
+https://randomuser.me/
+https://developer.github.com/v3/ - endpoint
+https://developer.github.com/v3/repos/#list-user-repositories - params for repo request
+
+Create github search

@@ -60,17 +60,14 @@ const ordersB = [
     },
 ]
 
-const orderC = []
 
 Написати ф-ю showDeliveryStatus яка приймає масив і виводить на екран інформацію про доставку товара всіх типів.
 
 Якщо прогрес доставки 100 показувати строку "Done"
 Якщо прогрес доставки  < 100 показувати строку "In progress"
 Якщо прогрес доставки  null показувати строку "Ready for delivery"
-Якщо замовлення якогось типу відсутне показувати строку "Not Ordered"
 
 showDeliveryStatus(ordersA) // "In Progress", "Done", "Ready for delivery"
 
 showDeliveryStatus(ordersB) // "In progress", "Not Ordered", "Ready for delivery"
 
-showDeliveryStatus(ordersC) // "Not Ordered", "Not Ordered", "Not Ordered"

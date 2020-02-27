@@ -178,21 +178,21 @@
 //   .then(response => console.log(response))
 //   .catch(err => console.error(err));
 
-function asyncLoop(count) {
-  return new Promise((resolve, reject) => {
-    const arr = [];
-    for (let i = 0; i < count; i++) {
-      arr.push(i);
-    }
-    const sum = arr.reduce((acc, el) => acc + el);
+// function asyncLoop(count) {
+//   return new Promise((resolve, reject) => {
+//     const arr = [];
+//     for (let i = 0; i < count; i++) {
+//       arr.push(i);
+//     }
+//     const sum = arr.reduce((acc, el) => acc + el);
 
-    if (sum % 2 !== 0) {
-      resolve(sum);
-    } else {
-      reject("Error");
-    }
-  });
-}
+//     if (sum % 2 !== 0) {
+//       resolve(sum);
+//     } else {
+//       reject("Error");
+//     }
+//   });
+// }
 
 // let thenResult = null;
 

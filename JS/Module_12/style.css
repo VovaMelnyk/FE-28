@@ -1,0 +1,28 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    padding-top: 50px;
+}
+
+.search {
+    width: 310px;
+    margin: 0 auto 20px;
+}
+
+.search__input {
+    padding: 3px;
+    font-size: 18px;
+}
+
+.search__submit {
+    font-family: sans-serif;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #eee;
+} */
