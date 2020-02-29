@@ -53,56 +53,107 @@
 //   .then(res => res.json())
 //   .then(data => console.log(data));
 
-const renderNews = arr => {
-  const list = document.querySelector("#list");
-  list.innerHTML = "";
-  const liCollection = arr.map(el => {
-    const li = document.createElement("li");
-    const content = document.createElement("div");
-    content.classList.add("content");
-    li.textContent = el.webTitle;
-    li.dataset.apiUrl = el.apiUrl;
-    li.append(content);
-    return li;
-  });
-  list.append(...liCollection);
-};
+class News {
+  constructor(url) {
+    this.counter = 1;
+    this.url = url;
+    this.button = document.querySelector("#refresh");
+    this.list = document.querySelector("#list");
+    this.nextButton = document.querySelector("#next");
+    this.prevButton = document.querySelector("#prev");
+    this.input = document.querySelector("input");
+  }
+  renderNews = arr => {
+    this.list.innerHTML = "";
+    const liCollection = arr.map(el => {
+      const li = document.createElement("li");
+      const content = document.createElement("div");
+      content.classList.add("content");
+      li.textContent = el.webTitle;
+      li.dataset.apiUrl = el.apiUrl;
+      li.append(content);
+      return li;
+    });
+    this.list.append(...liCollection);
+  };
+  renderPagination = response => {
+    const p = document.querySelector(".page-amount");
+    p.textContent = `of ${response.pages} pages`;
+    this.input.value = response.currentPage;
+  };
+  renderErrorMessage = () => {
+    const title = document.createElement("h3");
+    title.textContent = "Sorry, service is not working now. Try again later";
+    this.list.append(title);
+  };
+  renderContent = (item, arr) => {
+    const string = arr.reduce((acc, el) => el.bodyHtml + acc, "");
+    const container = item.querySelector(".content");
+    container.classList.toggle("open");
+    container.insertAdjacentHTML("beforeend", string);
+  };
 
-const renderErrorMessage = () => {
-  const list = document.querySelector("#list");
-  const title = document.createElement("h3");
-  title.textContent = "Sorry, service is not working now. Try again later";
-  list.append(title);
-};
+  fetchNews = () => {
+    fetch(this.url + this.counter)
+      .then(res => res.json())
+      .then(data => {
+        this.renderNews(data.response.results);
+        this.renderPagination(data.response);
+      })
+      .catch(() => this.renderErrorMessage());
+  };
 
-const renderContent = (item, arr) => {
-  const string = arr.reduce((acc, el) => el.bodyHtml + acc, "");
-  const container = item.querySelector(".content");
-  container.insertAdjacentHTML("beforeend", string);
-};
+  fetchDetails = ({ target }) => {
+    const content = target.querySelector(".open");
+    if (content) {
+      content.classList.toggle("open");
+      content.addEventListener("transitionend", () => (content.innerHTML = ""));
+      return;
+    }
+    const entryPoint = target.dataset.apiUrl;
+    const URL = `${entryPoint}?show-blocks=body&api-key=eb8d594b-2b39-402a-bd31-61602b02185a`;
+    fetch(URL)
+      .then(res => res.json())
+      .then(data =>
+        this.renderContent(target, data.response.content.blocks.body)
+      )
+      .catch(err => console.log(err));
+  };
 
-const fetchNews = () => {
-  fetch(
-    "https://content.guardianapis.com/search?api-key=eb8d594b-2b39-402a-bd31-61602b02185a"
-  )
-    .then(res => res.json())
-    .then(data => renderNews(data.response.results))
-    .catch(() => renderErrorMessage());
-};
+  nextPage = () => {
+    this.counter++;
+    this.fetchNews();
+  };
 
-const fetchDetails = ({ target }) => {
-  console.log(target);
-  const entryPoint = target.dataset.apiUrl;
-  const URL = `${entryPoint}?show-blocks=body&api-key=eb8d594b-2b39-402a-bd31-61602b02185a`;
-  fetch(URL)
-    .then(res => res.json())
-    .then(data => renderContent(target, data.response.content.blocks.body))
-    .catch(err => console.log(err));
-};
+  pevPage = () => {
+    if (this.counter === 1) {
+      return;
+    }
+    this.counter--;
+    this.fetchNews();
+  };
+  inputChange = e => {
+    const inputValue = e.target.value;
+    if (!Number(inputValue)) {
+      return;
+    }
+    this.counter = inputValue;
+    this.fetchNews();
+  };
+  addListeners = () => {
+    this.input.addEventListener("input", this.inputChange);
+    this.nextButton.addEventListener("click", this.nextPage);
+    this.prevButton.addEventListener("click", this.pevPage);
+    this.list.addEventListener("click", this.fetchDetails);
+    this.button.addEventListener("click", this.fetchNews);
+  };
 
-const button = document.querySelector("#refresh");
-const list = document.querySelector("#list");
-list.addEventListener("click", fetchDetails);
-button.addEventListener("click", fetchNews);
+  init = () => {
+    this.addListeners();
+    window.addEventListener("DOMContentLoaded", this.fetchNews);
+  };
+}
 
-window.addEventListener("DOMContentLoaded", fetchNews);
+new News(
+  `https://content.guardianapis.com/search?api-key=eb8d594b-2b39-402a-bd31-61602b02185a&page=`
+).init();

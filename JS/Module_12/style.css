@@ -26,3 +26,26 @@
     border: none;
     background-color: #eee;
 } */
+
+.content {
+  max-height: 0;
+  transition: max-height 1s ease-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.open {
+  max-height: 500px;
+}
+
+.pagination {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 200px;
+  margin: auto;
+}
+
+.pagination input {
+  width: 30px;
+}
