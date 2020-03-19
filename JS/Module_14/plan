@@ -16,9 +16,8 @@ async await
 axios and github api and async await
 
 
-ws
+ws - basic rules
 events
-
 Open
 Message
 Close
@@ -29,3 +28,5 @@ send
 close
 
 chat
+
+RegExp

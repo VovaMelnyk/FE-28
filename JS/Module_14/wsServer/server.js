@@ -7,6 +7,7 @@ const wss = new WebSocket.Server({ port: 8080 });
 // the callback argument ws is a unique for each client
 wss.on("connection", ws => {
   // runs a callback on message event
+  console.log("one more user connected");
   ws.on("message", data => {
     console.log(data);
     // sends the data to all connected clients
@@ -15,5 +16,8 @@ wss.on("connection", ws => {
         client.send(data);
       }
     });
+  });
+  ws.on("close", () => {
+    console.log("User exit from chat");
   });
 });
