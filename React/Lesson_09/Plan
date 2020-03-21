@@ -1,0 +1,4 @@
+1) props children pattern
+2) HOC pattern
+3) render props pattern
+4) React context with Provider and Consumer (but without hooks)

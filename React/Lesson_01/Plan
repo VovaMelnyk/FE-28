@@ -1,0 +1,12 @@
+1) Що таке React, для чого і коли використовується
+2) MPA vs SPA
+3) Virtual DOM
+4) Що таке компоненти і як поділити інтерфейс
+5) create-react-app (install and create first project)
+6) Project overview
+7) jsx and React.create element()
+8) Functional components
+9) js code in jsx
+10) one container (div, Fragment, <>)
+11 )Props, (destr props) PropTypes default props
+12) Render collection and key
