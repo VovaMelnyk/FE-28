@@ -1,5 +1,5 @@
-0) Class components
-1) State (render from state + destr) 
+0) Class components 
+1) State (render from state + destr)  (create state with constructor and without it)
 2) Events (inline bind, bind in constructor, inline callback)
 3) setState (obj, prevState, second param in setState, async await)
 4) conditional render
