@@ -85,7 +85,8 @@
     "price": 75.0,
     "currencyId": "USD",
     "currencyFormat": "$",
-    "isFreeShipping": false
+    "isFreeShipping": false,
+    "img": "https://i.ibb.co/0jDhL34/51498472915966370-1.jpg"
   },
   {
     "id": 0,

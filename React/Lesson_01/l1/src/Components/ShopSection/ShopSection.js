@@ -1,11 +1,11 @@
 import React from "react";
+import productsArr from "../../db/products.json";
 import Card from "../Card/Card";
-import classes from './ShopSection.module.css'
-
+import classes from "./ShopSection.module.css";
 const ShopSection = () => {
   return (
     <section className={classes.Container}>
-      <div className={classes['Сontainer-header']}>
+      <div className={classes.CardHeader}>
         <small>
           <span>16 Product(s) found</span>
         </small>
@@ -18,14 +18,17 @@ const ShopSection = () => {
           </select>
         </div>
       </div>
-      <Card shippingType="shipping" name="T-Shirt" price="1000" />
-      <Card shippingType="Free" name="Cat Tee Black" price="25" />
-      <Card shippingType="Not Find" name="Cat " price="2" />
-      <Card shippingType="dff" name="Hello" price="5" />
-      {/* <Card/>
-            <Card/>
-            <Card/>
-            <Card/> */}
+      <>
+        {productsArr.map(el => (
+          <Card
+            key={el.id}
+            name={el.title}
+            price={el.price}
+            shippingType={el.isFreeShipping}
+            img={el.img}
+          />
+        ))}
+      </>
     </section>
   );
 };

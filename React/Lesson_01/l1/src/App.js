@@ -7,7 +7,6 @@ import Cart from "./Components/Cart/Cart";
 
 import "./App.css";
 
-
 function App() {
   return (
     // <div>
@@ -22,7 +21,7 @@ function App() {
     <>
       <Header />
       <Main />
-      <Cart/>
+      {/* <Cart/> */}
     </>
   );
 }

@@ -1,22 +1,21 @@
-import React from 'react';
-// import './Header.css'
+import React from "react";
 
-// const header = {
-//     minHeight: "60px",
-//     backgroundColor: '#000',
-//     color: "#fff"
-// }
+const headerStyle = {
+  minHeight: "60px",
+  backgroundColor: "#000",
+  color: "#fff"
+};
+
+const title = {
+  color: "red"
+};
 
 const Header = () => {
-    return (
-        <header className='header'>
-           <h1> Shop Header</h1>
-        </header>
+  return (
+    <header style={headerStyle}>
+      <h1 style={title}> Shop Header</h1>
+    </header>
+  );
+};
 
-        // <header style={header}>
-        //    <h1> Shop Header</h1>
-        // </header>
-    )
-}
-
-export default Header
+export default Header;

@@ -15,17 +15,6 @@ export const CardItem = styled.div`
   }
 `;
 
-export const CardStopper = styled.div`
-  position: absolute;
-  color: #ececec;
-  top: 10px;
-  right: 10px;
-  padding: 5px;
-  font-size: 0.6em;
-  background-color: #1b1a20;
-  cursor: default;
-`;
-
 export const CardThumb = styled.div`
   & img {
     width: 100%;
@@ -55,18 +44,29 @@ export const CardPrice = styled.div`
 export const BuyBtn = styled.button`
   display: block;
   width: 100%;
-  background-color:  ${props => props.outlined ? '#fff': '#1b1a20' };
-  color: ${props => props.outlined ? '#1b1a20' : '#fff'};
+  background-color: ${props => (props.outlined ? "#fff" : "#1b1a20")};
+  color: ${props => (props.outlined ? "#1b1a20" : "#fff")};
   padding: 15px 0;
   margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   font-size: 16px;
-  border: ${props => props.outlined ? '2px solid #1b1a20': "none"};
+  border: ${props => (props.outlined ? "2px solid #1b1a20" : "none")};
 
   &:hover {
     background-color: #eabf00;
   }
+`;
+
+export const CardStopper = styled.div`
+  position: absolute;
+  color: #ececec;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 0.6em;
+  background-color: #1b1a20;
+  cursor: default;
 `;
 
 // export const BuyBtn = styled.button`
