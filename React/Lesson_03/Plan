@@ -1,7 +1,8 @@
 0) Class components 
-1) State (render from state + destr)  (create state with constructor and without it)
+1) State (render from state + destr)  (create state with constructor and without it) (Counter)
 2) Events (inline bind, bind in constructor, inline callback)
 3) setState (obj, prevState, second param in setState, async await)
-4) conditional render
-5) method with setState like props
-6) Todo list example (read, create, delete, update)
+5) method with setState pass like props to other component
+6) cart example (read, create, delete, update)
+
+https://codepen.io/juhi-trivedi/full/MLvXyv
