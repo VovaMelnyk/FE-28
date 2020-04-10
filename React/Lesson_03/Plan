@@ -1,4 +1,4 @@
-0) Class components 
+0) Class components (stateless vs stateful )
 1) State (render from state + destr)  (create state with constructor and without it) (Counter)
 2) Events (inline bind, bind in constructor, inline callback)
 3) setState (obj, prevState, second param in setState, async await)
@@ -6,3 +6,16 @@
 6) cart example (read, create, delete, update)
 
 https://codepen.io/juhi-trivedi/full/MLvXyv
+
+static defaultProps = {};
+
+static propTypes = {};
+
+Add to cart
+delete from cart
+edit count in cart
+fix total sum
+fix total count
+check if item exist
+
+show hooks

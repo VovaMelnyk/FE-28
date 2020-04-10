@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from "./ShopSectionHeader.module.css"
-const ShopSectionHeader = () => {
+const ShopSectionHeader = ({productsCount}) => {
     return (
         <div className={classes.CardHeader}>
         <small>
-          <span>16 Product(s) found</span>
+          <span>{productsCount} Product(s) found</span>
         </small>
         <div className={classes.Sort}>
           Order by

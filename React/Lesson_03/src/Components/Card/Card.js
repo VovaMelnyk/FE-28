@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import classes from './Card.module.css';
 
 
-const Card = ({ shippingType, name, price, img }) => {
+const Card = ({ shippingType, name, price, img, addToCart, id }) => {
+  const add = () => {
+    addToCart(id)
+  }
   return (
     <div className={classes.Card}>
       {shippingType && <p className={classes.Stopper}>Free</p>}
@@ -12,7 +15,7 @@ const Card = ({ shippingType, name, price, img }) => {
       </div>
       <h2 className={classes.Title}>{name}</h2>
       <p className={classes.Price}>$ {price}</p>
-      <button className={classes['Buy-btn']}>Add to cart</button>
+      <button className={classes['Buy-btn']} onClick={add}>Add to cart</button>
     </div>
   );
 };
