@@ -1,5 +1,6 @@
 1) Controlled and uncontrolled forms
 2) universal change methods for 
-input,  checkbox, radio
+input, checkbox
 4) Select component
 5) Create todo with form
+6) Hooks variant
