@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "../Form/Form";
 import Todo from "../Todo/Todo";
 import "./TodoList.css";
+import HookForm from "../HookForm/HookForm";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
@@ -45,7 +46,8 @@ const TodoList = () => {
   return (
     <div className="TodoList">
       <h1 className="TodoList__title">Todo List</h1>
-      <Form addTodo={addTodo} />
+      {/* <Form addTodo={addTodo} /> */}
+      <HookForm addTodo={addTodo}/>
       <ul className="TodoList__todos">
         {filterTasks().length ? (
           filterTasks().map((todo, index) => (
