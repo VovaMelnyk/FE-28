@@ -1,0 +1,69 @@
+.Card {
+  width: 25%;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.Card:hover {
+  border: 1px solid #eee;
+}
+
+.Stopper {
+  position: absolute;
+  color: #ececec;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 0.6em;
+  background-color: #1b1a20;
+  cursor: default;
+}
+
+.Thumb img {
+  width: 100%;
+}
+
+.Title {
+  position: relative;
+  padding: 0 20px;
+  height: 45px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.Title:before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #eabf00;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -10px;
+}
+
+.Price {
+  padding: 10px 0;
+}
+
+.Buy-btn {
+  display: block;
+  width: 100%;
+  background-color: #1b1a20;
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 16px;
+  border: none;
+}
+
+.Buy-btn:hover {
+  background-color: #eabf00;
+}

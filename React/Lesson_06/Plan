@@ -1,5 +1,5 @@
-1) Life cycle methods (old and new version)
-2) refs
-3) Portals and modals
-4) save in localStorage
-5) Practice
+1) Life cycle methods (old and new version)(modal example)
+2) refs (focus on modal input) (in modal example) (escape listener and overlay click)
+3) save in localStorage (save cart state to localStorage)
+old version (https://hackernoon.com/hn-images/1*sn-ftowp0_VVRbeUAFECMA.png)
+new version (https://i0.wp.com/programmingwithmosh.com/wp-content/uploads/2018/10/Screen-Shot-2018-10-31-at-1.44.28-PM.png?ssl=1)
