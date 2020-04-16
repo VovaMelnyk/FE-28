@@ -11,6 +11,13 @@ class App extends Component {
     cardsArr: products,
     isCartOpen: false,
     cartCollection: [],
+    contactModal: false,
+  };
+
+  toggleModal = () => {
+    this.setState((prev) => ({
+      contactModal: !prev.contactModal,
+    }));
   };
 
   toggleCart = () => {
@@ -61,10 +68,10 @@ class App extends Component {
   };
 
   render() {
-    const { cardsArr, cartCollection, isCartOpen } = this.state;
+    const { cardsArr, cartCollection, isCartOpen, contactModal } = this.state;
     return (
       <>
-        <Modal />
+        {contactModal && <Modal onClose={this.toggleModal} />}
         <Header />
         <Main cardsArr={cardsArr} addToCart={this.addToCart} />
         <Cart
@@ -73,6 +80,7 @@ class App extends Component {
           toggleCart={this.toggleCart}
           deleteFromCart={this.deleteFromCart}
           editCartItem={this.editCartItem}
+          toggleModal={this.toggleModal}
         />
       </>
     );

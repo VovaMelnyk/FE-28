@@ -7,6 +7,7 @@ const Cart = ({
   toggleCart,
   deleteFromCart,
   editCartItem,
+  toggleModal,
 }) => {
   const bag = [classes.Bag];
   const cart = [classes.Cart];
@@ -38,7 +39,9 @@ const Cart = ({
             <p className={classes.Sub}>TOTAL</p>
             <p className={classes["Total-amount"]}>$ {total}</p>
           </div>
-          <div className={classes["Buy-btn"]}>Checkout</div>
+          <div className={classes["Buy-btn"]} onClick={toggleModal}>
+            Checkout
+          </div>
         </div>
       </div>
     </div>
