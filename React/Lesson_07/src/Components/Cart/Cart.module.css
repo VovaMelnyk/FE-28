@@ -1,0 +1,110 @@
+.Cart {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background-color: #1b1a20;
+    box-sizing: border-box;
+    -webkit-transition: right 0.2s;
+    transition: right 0.2s;
+  }
+  
+  .Cart-open {
+    right: 0;
+  }
+  
+  .Bag {
+    position: absolute;
+    margin-right: 15px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfiCwwQEgYn7+gWAAABQklEQVRIx9WTsUoDQRRF72xMYSFokcRCjBFESGWRwtZe8AtEFFNrI1bB0tLGQuzs/AJB8AO2kZRCxBiRQNKIoIYoyLFwCZuss9nNgpBXzc7be3j3zow09mU48321zVF8gNtbZ5Q1UwmGYQPIxFU5vnVdUuHfARO+OD5oa9GzM6NcbICkem+CLZ0kA1zKHQ2w6tlpqRUN4AwA5knFiTAISGsuHqDfwoOkgp4kUkoP1WI+Azt02ZYk9hle3cAEBh69c7iKEOJ30IJU/71KpqbaKCH6b0LEGgTcaYXpeIj+GJf54pyI70CSTACxq1M5ehmqvDCHfwIkFrQW4S1WzXUCq+E5lNhkMqSfo0ze3t7hlWeqIfJ3GnQo2n644ZhZYMnSL9OQcKnYAHs0ueUeY+nn6eDyRskGcFjngGxIBkUqVvk41g+oBJ136GBf8AAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0xMS0xMlQxNjoxODowNiswMTowMEVm3zEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMTEtMTJUMTY6MTg6MDYrMDE6MDA0O2eNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    left: -60px;
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    background-size: 50%;
+    cursor: pointer;
+  }
+  
+  .Quantity {
+    width: 18px;
+    height: 18px;
+    color: #0c0b10;
+    font-weight: 700;
+    font-size: 0.7em;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: #eabf00;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+  }
+  
+  .Container {
+    max-height: 540px;
+    overflow-y: auto;
+  }
+  
+  .Footer {
+    box-sizing: border-box;
+    padding: 5%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 2;
+    background-color: #1b1a20;
+  }
+  
+  .Footer:before {
+    content: "";
+    width: 100%;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2), transparent);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), transparent);
+  }
+  
+  .Sub {
+    width: 20%;
+    color: #5b5a5e;
+  }
+  
+  .Total-amount {
+    width: 80%;
+    text-align: right;
+    color: #eabf00;
+    font-size: 22px;
+  }
+  
+  .Buy-btn {
+    color: #ececec;
+    text-transform: uppercase;
+    background-color: #0c0b10;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    cursor: pointer;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  
+  .Buy-btn:hover {
+    background-color: #eabf00;
+  }
+  
+  .Total {
+    display: flex;
+    align-items: center;
+  }
+  
+  .Content {
+    padding-top: 50px;
+  }
+  
