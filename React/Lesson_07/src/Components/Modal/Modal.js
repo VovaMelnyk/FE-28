@@ -17,72 +17,6 @@ class Modal extends Component {
     });
   };
 
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     title: this.props.title
-  //   }
-  //   this.handler = this.handler.bind(this)
-  // }
-
-  // static getDerivedStateFromProps() {} // new (componentWillMount, componentWillUpdate, componentWillReceiveProps)
-
-  // // Mounting
-  // componentWillMount() {
-  //   console.log("componentWillMount");
-  //   // this.setState({}) // не можна
-  // } // old
-
-  // componentDidMount() {
-  //   console.log("componentDidMount");
-  // }
-
-  // Update
-
-  // componentWillReceiveProps(nextProps) {} // old
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   // console.log("Next State", nextState);
-  //   // console.log("Old state", this.state);
-  //   // if (nextState.email.trim() !== this.state.email) {
-  //   //   return true;
-  //   // }
-
-  //   // if (nextState.phone.trim() !== this.state.phone) {
-  //   //   console.log("shouldComponentUpdate");
-  //   //   return true;
-  //   // }
-
-  //   // return false;
-  //   console.log("shouldComponentUpdate");
-  //   return true;
-  // }
-
-  // componentWillUpdate(nextProps, nextState) {
-  //   // old
-  //   console.log("componentWillUpdate");
-  // }
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log("prevState", prevState);
-  //   console.log("New state", this.state);
-  //   console.log("componentDidUpdate");
-  //   if (prevState.phone !== this.state.phone) {
-  //     this.setState({
-  //       email: "user@gmail.com",
-  //     });
-  //   }
-  // }
-
-  //   componentWillUpdate(nextProps, nextState) {}
-
-  // getSnapshotBeforeUpdate(prevProps, prevState) {}
-
-  // componentDidUpdate(prevProps, prevState, snapshot) {}
-
-  // componentWillUnmount() {
-  //   console.log("componentWillUnmount");
-  // }
-
   closeOverlay = (e) => {
     if (e.target !== this.overlayRef.current) {
       return;
@@ -106,13 +40,13 @@ class Modal extends Component {
   }
 
   formSubmit = (e) => {
+    const { email, phone } = this.state;
     e.preventDefault();
-    // axios.post()
+    this.props.makeOrder(email, phone);
     this.props.onClose();
   };
 
   render() {
-    // console.log("render");
     return (
       <div
         className={classes.overlay}

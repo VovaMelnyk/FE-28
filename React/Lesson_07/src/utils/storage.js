@@ -5,6 +5,7 @@ const save = (key, value) => {
       throw new Error();
     }
   };
+
   const get = key => {
     try {
       const items = localStorage.getItem(key);
@@ -13,6 +14,7 @@ const save = (key, value) => {
       throw new Error();
     }
   };
+  
   export default {
     save,
     get,

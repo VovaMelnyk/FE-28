@@ -31,6 +31,7 @@ const Cart = ({
               deleteFromCart={deleteFromCart}
               index={index}
               editCartItem={editCartItem}
+              key={el.id}
             />
           ))}
         </div>

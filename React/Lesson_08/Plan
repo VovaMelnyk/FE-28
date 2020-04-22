@@ -1,5 +1,5 @@
-1) Work with rest API in class component
-2) Loaders, errors message
-3) Work with rest API with hooks
-4) Loaders and errors with hooks
-5) Create custom hooks
+ useEffect
+ env.local
+ Work with rest API with hooks
+ Loaders and errors with hooks
+ Create custom hooks
