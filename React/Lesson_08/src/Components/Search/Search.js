@@ -1,16 +1,15 @@
 import React from "react";
 
-const Search = () => {
-
+const Search = ({ name, inputChange, onSubmit }) => {
   return (
     <div className="form-group">
       <input
         type="text"
         className="form-control"
         placeholder="Enter nickname"
-        // onKeyPress={onSubmit}
-        // value={value}
-        // onChange={inputChange}
+        onKeyPress={onSubmit}
+        value={name}
+        onChange={inputChange}
       />
     </div>
   );
