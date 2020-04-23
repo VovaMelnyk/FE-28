@@ -20,9 +20,10 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   /**
+   * update code
    * Додано перевірку яка чистить список коли очистили інпут і скидає поточну сторінку
    * до початкового значення
-   * 29 - 32 рядки
+   * 30 - 33 рядки
    */
 
   const inputChange = (e) => {
@@ -39,10 +40,11 @@ const Home = () => {
     }
   };
   /**
+   * update code
    * useCallback видалений так як запит за новими картинками з useEffect перемістився в getMoreImage
    * Доданий параметр page - нова сторінка по якій треба робити запит
-   * 47 і 52 рядочки
-   * 55 рядок постійне оновлення списку (без різниці чи перший запит чи ні)
+   * 49 і 54 рядочки
+   * 57 рядок постійне оновлення списку (без різниці чи перший запит чи ні)
    */
   const getUsers = async (page) => {
     setLoader(true);
@@ -96,6 +98,7 @@ const Home = () => {
   };
 
   /**
+   * update code
    * ф-я changeCurrentPage переіменована на getMoreImage
    * Визначається новий номер сторінки і передається для запиту і для зміни стейта
    * 
@@ -123,6 +126,7 @@ const Home = () => {
             ))}
           {!!users.length && (
             /**
+             * update code
              * переіменована changeCurrentPage на getMoreImage
              */
             <button className="btn btn-danger" onClick={getMoreImage}>
