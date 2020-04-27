@@ -1,4 +1,12 @@
-1) props children pattern
-2) HOC pattern
-3) render props pattern
-4) React context with Provider and Consumer (but without hooks)
+1) Навіщо взагалі роутинг
+2) Підключення роутинга в проект
+3) Базові компоненти для роботи роутинга (Switch, Route, NavLink, Link, BrowserRouter, Redirect)
+4) Налаштування меню і зміна адресної страчки в браузері
+5) Налаштування переключання сторінок (exact)
+6) Route component route render
+7) Route props
+8) Nested router
+9) Dynamic router
+10) history.push history.replace (Router hooks)
+11) to like object
+12) hash and anchors with routers and scroll
