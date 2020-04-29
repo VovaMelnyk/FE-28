@@ -7,6 +7,14 @@
 7) Route props
 8) Nested router
 9) Dynamic router
-10) history.push history.replace (Router hooks)
-11) to like object
-12) hash and anchors with routers and scroll
+
+////////////////////////////////////////////////////////////////////////////////
+0) Repos nested route
+1) work with search Link
+2) to like object
+3) back to main with history.push (query-string)
+4) Private Route and Public Route (Component and if)
+5) Containers and Components
+6) Single file for routes
+7) Address like object and menu from array
+8) Code Splitting and Suspense

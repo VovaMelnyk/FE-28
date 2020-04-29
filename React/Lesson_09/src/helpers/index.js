@@ -18,3 +18,11 @@ export const getUserRepos = async (login) => {
     withCredentials(`https://api.github.com/users/${login}/repos?per_page=5&`)
   );
 };
+
+export const getUsers = async (name) => {
+  return await axios.get(
+    withCredentials(
+      `https://api.github.com/search/users?q=${name}&per_page=9&page=1&`
+    )
+  );
+};

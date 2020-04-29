@@ -15,3 +15,10 @@ const Card = ({ login, avatar_url }) => {
 };
 
 export default Card;
+
+// {
+//   pathname: `/profile/${login}`,
+//   state: {
+//     from: location
+//   }
+// }

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Repos from "../../Components/Repos/Repos";
 import { getUser } from "../../helpers";
 import { useParams } from "react-router-dom";
+
 const Profile = () => {
   const [singleUser, setSingleUser] = useState({});
   const [loading, setLoading] = useState(true);
 
   const userName = useParams().login;
+
   // props.match.params.login
 
   useEffect(() => {
@@ -36,7 +38,6 @@ const Profile = () => {
 
   return (
     <>
-      To main page
       <div className="card mb-4">
         <div className="card-body">
           <div className="row">
@@ -94,6 +95,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        {/* <Repos /> */}
       </div>
     </>
   );

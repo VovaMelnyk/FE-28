@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Containers/Home/Home";
 import About from "./Containers/About/About";
 import Profile from "./Containers/Profile/Profile";
+
 function App() {
   return (
     <>
