@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Repos from "../../Components/Repos/Repos";
-
+import { getUser } from "../../helpers";
+import { useParams } from "react-router-dom";
 const Profile = () => {
   const [singleUser, setSingleUser] = useState({});
   const [loading, setLoading] = useState(true);
 
-  // console.log(useHistory());
-  // console.log(useLocation());
-  // console.log(useParams());
-  // console.log(useRouteMatch());
+  const userName = useParams().login;
+  // props.match.params.login
 
-  if (true) {
+  useEffect(() => {
+    getUser(userName)
+      .then((response) => setSingleUser(response.data))
+      .then(() => setLoading(false));
+  }, [userName]);
+
+  if (loading) {
     return <p className="text-center">Загрузка...</p>;
   }
 
