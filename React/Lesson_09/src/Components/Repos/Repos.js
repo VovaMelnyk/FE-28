@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
-
-const Repos = () => {
+import { getUserRepos } from "../../helpers";
+import { useParams } from "react-router-dom";
+const Repos = (props) => {
   const [repos, setRepos] = useState([]);
+
+  const userName = props.match.params.login;
+  // const userName = useParams().login;
+  // console.log(useParams());
+
+  useEffect(() => {
+    getUserRepos(userName).then((response) => setRepos(response.data));
+  }, [userName]);
 
   return (
     <>

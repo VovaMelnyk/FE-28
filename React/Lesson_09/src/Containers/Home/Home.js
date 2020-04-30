@@ -3,13 +3,15 @@ import Search from "../../Components/Search/Search";
 import Card from "../../Components/Card/Card";
 import { getUsers } from "../../helpers";
 import queryString from "query-string";
+import { useLocation, useHistory } from "react-router-dom";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
-
+  const history = useHistory();
+  const location = useLocation();
 
   const inputChange = (e) => {
     if (!e.target.value) {
@@ -21,9 +23,18 @@ const Home = () => {
   const onSubmit = (e) => {
     if (e.key === "Enter") {
       getUsers(name).then((res) => setUsers(res.data.items));
-      // history.push and change location search like obj
+      history.push({ ...location, search: `?nickname=${name}` });
     }
   };
+
+  useEffect(() => {
+    if (!location.search) {
+      setUsers([]);
+      return;
+    }
+    const login = queryString.parse(location.search).nickname;
+    getUsers(login).then((res) => setUsers(res.data.items));
+  }, [location.search]);
 
   return (
     <>

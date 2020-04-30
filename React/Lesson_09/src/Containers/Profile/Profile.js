@@ -1,21 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Repos from "../../Components/Repos/Repos";
 import { getUser } from "../../helpers";
-import { useParams } from "react-router-dom";
+import { useParams, Switch, Route } from "react-router-dom";
+import {
+  NavLink,
+  useHistory,
+  useLocation,
+} from "react-router-dom/cjs/react-router-dom.min";
 
-const Profile = () => {
+const Profile = (props) => {
   const [singleUser, setSingleUser] = useState({});
   const [loading, setLoading] = useState(true);
 
   const userName = useParams().login;
 
-  // props.match.params.login
+  const history = useHistory();
+  const locationState = useLocation();
+
+  console.log(props);
 
   useEffect(() => {
     getUser(userName)
       .then((response) => setSingleUser(response.data))
       .then(() => setLoading(false));
   }, [userName]);
+
+  const showRepos = () => {
+    props.history.push(`${props.match.url}/repos`); // замінив props.location.pathname
+  };
+
+  const goBack = () => {
+    console.log(history);
+    // history.goBack();
+    history.push({ ...locationState.state.from });
+  };
 
   if (loading) {
     return <p className="text-center">Загрузка...</p>;
@@ -38,6 +56,9 @@ const Profile = () => {
 
   return (
     <>
+      <button className="btn btn-danger" onClick={goBack}>
+        Go back
+      </button>
       <div className="card mb-4">
         <div className="card-body">
           <div className="row">
@@ -91,11 +112,19 @@ const Profile = () => {
           </div>
           <div className="row">
             <div className="col">
-              <button className="btn btn-primary">Show Repos</button>
+              <button className="btn btn-primary" onClick={showRepos}>
+                Show Repos
+              </button>
             </div>
           </div>
         </div>
-        {/* <Repos /> */}
+        <Switch>
+          <Route path={`${props.match.path}/repos`} component={Repos} />
+          {/* <Route
+            path={`${props.location.pathname}`}
+            render={(props) => <Repos {...props} name={userName} />}
+          /> */}
+        </Switch>
       </div>
     </>
   );
