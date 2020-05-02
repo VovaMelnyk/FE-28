@@ -4,7 +4,6 @@ import Form from "../Form/Form";
 import TodoList from "../TodoList/TodoList";
 const Root = ({ save }) => {
   const [list, setList] = useState([]);
-
   const addItem = (item) => {
     const newState = [...list, item];
     setList(newState);

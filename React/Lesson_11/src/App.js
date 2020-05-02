@@ -7,7 +7,7 @@ function App() {
   return (
     <Storage
       render={({ save, get, remove }) => (
-        <Root save={save} get={get} remove={remove} />
+        <Root save={save} get={get} remove={remove}/>
       )}
     ></Storage>
   );
