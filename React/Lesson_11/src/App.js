@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import Header from "./Header/Header";
-import TodoList from "./TodoList/TodoList";
-import Form from "./Form/Form";
+import Root from "./Root/Root";
+import Storage from "./renderProp/Storage";
 
 function App() {
-  const [list, setList] = useState([]);
-
-  const addItem = (item) => {
-    const newState = [...list, item];
-    setList(newState);
-  };
-
-  const removeItem = (id) => {
-    const newState = list.filter((todo) => todo.id !== id);
-    setList(newState);
-  };
-
   return (
-    <div className="App">
-      <div className="container">
-        <Header title="Todo" />
-        <Form addItem={addItem} />
-        <TodoList list={list} removeItem={removeItem} />
-      </div>
-    </div>
+    <Storage
+      render={({ save, get, remove }) => (
+        <Root save={save} get={get} remove={remove} />
+      )}
+    ></Storage>
   );
 }
 
