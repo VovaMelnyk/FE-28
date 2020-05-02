@@ -1,4 +1,4 @@
-1) Animation in react
-2) Transition
-3) cssTransition
-4) Transition group
+1) HOC
+2) Render Prop
+3) Context API - class variant
+4) Context with hooks (useContext and useReducer)

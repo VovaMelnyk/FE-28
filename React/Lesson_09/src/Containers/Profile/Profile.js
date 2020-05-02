@@ -31,8 +31,8 @@ const Profile = (props) => {
 
   const goBack = () => {
     console.log(history);
-    // history.goBack();
-    history.push({ ...locationState.state.from });
+    history.goBack();
+    // history.push({ ...locationState.state.from });
   };
 
   if (loading) {
