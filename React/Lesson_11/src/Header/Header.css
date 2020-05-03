@@ -1,4 +1,12 @@
 h1 {
-    font-size: 36px;
-    font-family: sans-serif;
+  font-size: 36px;
+  font-family: sans-serif;
+}
+
+.title {
+  color: "#000";
+}
+
+.title-dark {
+  color: #fff;
 }

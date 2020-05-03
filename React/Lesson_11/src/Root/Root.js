@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
 import TodoList from "../TodoList/TodoList";
-
+import ThemeContext from "../context/ThemeContext";
+import "./Root.css";
 const Root = () => {
   const [list, setList] = useState([]);
 
@@ -17,13 +18,20 @@ const Root = () => {
   };
 
   return (
-    <div className="App">
-      <div className="container">
-        <Header title="Todo" />
-        <Form addItem={addItem} />
-        <TodoList list={list} removeItem={removeItem} />
-      </div>
-    </div>
+    <ThemeContext.Consumer>
+      {(context) => (
+        <div className={context.light ? "App" : "App-dark"}>
+          <div className={context.light ? 'container': 'container-dark'}>
+            <Header title="Todo" context={context} />
+            <Form addItem={addItem} />
+            <TodoList list={list} removeItem={removeItem} />
+            <button className="switch" onClick={context.switchTheme}>
+              Switch
+            </button>
+          </div>
+        </div>
+      )}
+    </ThemeContext.Consumer>
   );
 };
 
