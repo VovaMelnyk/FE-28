@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
 import TodoList from "../TodoList/TodoList";
+
 const Root = () => {
   const [list, setList] = useState([]);
-  
+
   const addItem = (item) => {
     const newState = [...list, item];
     setList(newState);
