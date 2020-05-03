@@ -1,4 +1,5 @@
-1) HOC
-2) Render Prop
-3) Context API - class variant
-4) Context with hooks (useContext and useReducer)
+1) HOC (Приклад з класом і приклад з ф-єю) (withLogProps withUserAuth withStorage withToggle)
+2) Render Prop (withUserAuth withStorage) props.children
+3) Context API - class variant (3 block example, theme example)
+4) Animations
+5) Context with hooks (useContext and useReducer)
