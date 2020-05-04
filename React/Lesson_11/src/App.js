@@ -6,11 +6,8 @@ import Root from "./Root/Root";
 // import ThemeProvider from "./context/Providers/ThemeProvider";
 
 function App() {
-  return (
-    // <ThemeProvider>
-      <Root />
-    // </ThemeProvider>
-  );
+  return <Root />;
+  
   // return (
   //   <SimpleProvider>
   //     <SimpleContextExample />

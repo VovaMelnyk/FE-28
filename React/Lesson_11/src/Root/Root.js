@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
 import TodoList from "../TodoList/TodoList";
-import { CSSTransition } from "react-transition-group";
 import "./Root.css";
 const Root = () => {
   const [list, setList] = useState([]);
@@ -30,22 +29,10 @@ const Root = () => {
         <TodoList list={list} removeItem={removeItem} />
         <button className="switch">Switch</button>
       </div>
-      <div className="anim">
+      {/* <div className="anim">
         <button onClick={toggleAlert}>Show Alert</button>
-        <CSSTransition
-          in={alert}
-          classNames="anim-alert"
-          // timeout={350}
-          timeout={{
-            enter: 500,
-            exit: 350,
-          }}
-          mountOnEnter
-          unmountOnExit
-        >
-          <div className="alert">Alert</div>
-        </CSSTransition>
-      </div>
+        <div className="alert">Alert</div>
+      </div> */}
     </div>
   );
 };
