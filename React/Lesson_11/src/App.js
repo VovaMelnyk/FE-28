@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
 import Root from "./Root/Root";
-import SimpleContextExample from "./SimpleContextExample/SimpleContextExample";
-import SimpleProvider from "./context/Providers/SimpleProvider";
-import ThemeProvider from "./context/Providers/ThemeProvider";
+// import SimpleContextExample from "./SimpleContextExample/SimpleContextExample";
+// import SimpleProvider from "./context/Providers/SimpleProvider";
+// import ThemeProvider from "./context/Providers/ThemeProvider";
 
 function App() {
   return (
-    <ThemeProvider>
+    // <ThemeProvider>
       <Root />
-    </ThemeProvider>
+    // </ThemeProvider>
   );
   // return (
   //   <SimpleProvider>

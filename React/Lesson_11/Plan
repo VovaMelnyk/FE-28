@@ -1,5 +1,5 @@
 1) HOC (Приклад з класом і приклад з ф-єю) (withLogProps withUserAuth withStorage withToggle)
 2) Render Prop (withUserAuth withStorage) props.children
 3) Context API - class variant (3 block example, theme example)
-4) Animations
+4) Animations (react-transition group) (enter, enter-active, exit, exit-active)
 5) Context with hooks (useContext and useReducer)

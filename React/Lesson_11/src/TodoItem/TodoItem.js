@@ -5,16 +5,15 @@ const TodoItem = ({ id, text, removeItem }) => {
     removeItem(id);
   };
   return (
-    <li className="item">
-      <span className="item__text">{text}</span>
-
-      <div className="item__action">
-        <button className="item__btn">Edit</button>
-        <button className="item__btn" onClick={deleteItem}>
-          Delete
-        </button>
-      </div>
-    </li>
+      <li className="item">
+        <span className="item__text">{text}</span>
+        <div className="item__action">
+          <button className="item__btn">Edit</button>
+          <button className="item__btn" onClick={deleteItem}>
+            Delete
+          </button>
+        </div>
+      </li>
   );
 };
 
