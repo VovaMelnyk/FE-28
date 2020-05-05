@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import withAuth from "../hoc/withUserAuth";
+import withStorage from "../hoc/withStorage";
+import IsAuthUser from "../renderProp/IsAuthUser";
 import "./Form.css";
 
-const Form = ({ addItem }) => {
+const Form = ({ addItem, isAuth }) => {
+  console.log("Form -> isAuth", isAuth);
   const [input, setInput] = useState("");
 
   const inputChange = (e) => {
@@ -20,17 +24,25 @@ const Form = ({ addItem }) => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
-      <input
-        type="text"
-        className="input"
-        placeholder="Enter task"
-        onChange={inputChange}
-        value={input}
-      />
-      <button className="save">Save item</button>
-    </form>
+    <IsAuthUser>
+      {({ isAuth }) => (
+        <form className="form" onSubmit={onSubmit}>
+          <input
+            type="text"
+            className="input"
+            placeholder="Enter task"
+            onChange={inputChange}
+            value={input}
+          />
+          <button className="save" disabled={!isAuth}>
+            Save item
+          </button>
+        </form>
+      )}
+    </IsAuthUser>
   );
 };
 
 export default Form;
+
+// export default withStorage(withAuth(Form));
