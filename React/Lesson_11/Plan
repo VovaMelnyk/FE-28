@@ -3,3 +3,9 @@
 3) Context API - class variant (3 block example, theme example)
 4) Animations (react-transition group) (enter, enter-active, exit, exit-active)
 5) Context with hooks (useContext and useReducer)
+
+1) create Context
+2) Create global state
+3) Create types
+4) Create reducer
+5) Create actions

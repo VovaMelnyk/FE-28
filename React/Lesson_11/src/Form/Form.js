@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import withAuth from "../hoc/withUserAuth";
-import withStorage from "../hoc/withStorage";
 import IsAuthUser from "../renderProp/IsAuthUser";
 import "./Form.css";
 
@@ -15,11 +13,7 @@ const Form = ({ addItem, isAuth }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const task = {
-      id: Date.now(),
-      text: input,
-    };
-    addItem(task);
+    addItem(input);
     setInput("");
   };
 
@@ -34,7 +28,7 @@ const Form = ({ addItem, isAuth }) => {
             onChange={inputChange}
             value={input}
           />
-          <button className="save" disabled={!isAuth}>
+          <button className="save">
             Save item
           </button>
         </form>
