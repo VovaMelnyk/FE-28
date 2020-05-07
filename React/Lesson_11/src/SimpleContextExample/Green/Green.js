@@ -1,7 +1,12 @@
 import React from "react";
 import "./Green.css";
+import SimpleContext from "../../context/simpleContext";
 const Green = () => {
-  return <div className="green"></div>;
+  return (
+    <SimpleContext.Consumer>
+      {({ number }) => <div className="green">{number}</div>}
+    </SimpleContext.Consumer>
+  );
 };
 
 export default Green;

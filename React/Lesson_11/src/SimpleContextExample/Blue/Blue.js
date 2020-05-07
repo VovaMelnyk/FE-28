@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Blue.css";
 import Green from "../Green/Green";
+import SimpleContext from "../../context/simpleContext";
 const Blue = () => {
+  const { increment } = useContext(SimpleContext);
   return (
     <div className="blue">
-      <button>Increment</button>
+      <button onClick={increment}>Increment</button>
       <Green />
     </div>
   );

@@ -4,20 +4,20 @@
   padding: 0;
 }
 
-/* .list__item-enter-active {
+.list__item-enter-active {
   animation: task 800ms ease-in alternate-reverse;
-} */
+}
 
-/* .list__item-exit-active {
+.list__item-exit-active {
   animation-duration: 800ms;
   animation-name: hinge;
-} */
+}
 
 /* .list__item-exit-active {
   animation: task 800ms ease-out forwards;
 } */
 
-/* @keyframes task {
+@keyframes task {
   0% {
     transform: translateX(0);
   }
@@ -31,9 +31,9 @@
     opacity: 0;
     transform: translateX(-200px);
   }
-} */
+}
 
-/* @keyframes hinge {
+@keyframes hinge {
   0% {
     transform-origin: top left;
     animation-timing-function: ease-in-out;
@@ -58,4 +58,4 @@
     transform: translate3d(0, 700px, 0);
     opacity: 0;
   }
-} */
+}

@@ -47,16 +47,16 @@
   margin-top: 20px;
 }
 
-.anim-alert-enter {
+.alert-enter {
   opacity: 0;
 }
 
-.anim-alert-enter-active {
+.alert-enter-active {
   transition: opacity 500ms ease-out;
   opacity: 1;
 }
 
-.anim-alert-exit-active {
+.alert-exit-active {
   transition: opacity 350ms ease-out;
   opacity: 0;
 }

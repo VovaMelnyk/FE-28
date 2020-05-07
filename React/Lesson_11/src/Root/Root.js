@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "../Header/Header";
 import Form from "../Form/Form";
 import TodoList from "../TodoList/TodoList";
 import withStorage from "../hoc/withStorage";
+import ThemeContext from "../context/ThemeContext";
+import { CSSTransition } from "react-transition-group";
 import "./Root.css";
 const Root = ({ saveToStorage }) => {
+  const { theme, switchTheme } = useContext(ThemeContext);
   const [list, setList] = useState([]);
   const [alert, setAlert] = useState(false);
 
@@ -25,17 +28,31 @@ const Root = ({ saveToStorage }) => {
   };
 
   return (
-    <div className="App">
-      <div className="container">
+    <div className={theme ? "App-dark" : "App"}>
+      <div className={theme ? "container-dark" : "container"}>
         <Header title="Todo" />
         <Form addItem={addItem} />
         <TodoList list={list} removeItem={removeItem} />
-        <button className="switch">Switch</button>
+        <button className="switch" onClick={switchTheme}>
+          Switch
+        </button>
       </div>
-      {/* <div className="anim">
+      {/* {alert && <div className="alert">Alert</div>} */}
+      <div className="anim">
         <button onClick={toggleAlert}>Show Alert</button>
-        <div className="alert">Alert</div>
-      </div> */}
+        <CSSTransition
+          in={alert}
+          classNames="alert"
+          timeout={{
+            enter: 500,
+            exit: 350,
+          }}
+          mountOnEnter
+          unmountOnExit
+        >
+          <div className="alert">Alert</div>
+        </CSSTransition>
+      </div>
     </div>
   );
 };

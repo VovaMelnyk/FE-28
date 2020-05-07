@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import withAuth from "../hoc/withUserAuth";
 import withStorage from "../hoc/withStorage";
-import IsAuthUser from "../renderProp/IsAuthUser";
 import "./Form.css";
 
 const Form = ({ addItem, isAuth }) => {
@@ -24,22 +23,16 @@ const Form = ({ addItem, isAuth }) => {
   };
 
   return (
-    <IsAuthUser>
-      {({ isAuth }) => (
-        <form className="form" onSubmit={onSubmit}>
-          <input
-            type="text"
-            className="input"
-            placeholder="Enter task"
-            onChange={inputChange}
-            value={input}
-          />
-          <button className="save" disabled={!isAuth}>
-            Save item
-          </button>
-        </form>
-      )}
-    </IsAuthUser>
+    <form className="form" onSubmit={onSubmit}>
+      <input
+        type="text"
+        className="input"
+        placeholder="Enter task"
+        onChange={inputChange}
+        value={input}
+      />
+      <button className="save">Save item</button>
+    </form>
   );
 };
 
