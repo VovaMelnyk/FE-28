@@ -1,23 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteTodo, updateTodo } from "../../../redux/actions/todo";
 import "./Todo.css";
-const Todo = ({
-  status,
-  title,
-  author,
-  priority,
-  deleteTodo,
-  id,
-  updateTodo,
-  index,
-}) => {
+const Todo = ({ status, title, author, priority, id, index }) => {
+  const dispatch = useDispatch();
 
   const deleteItem = () => {
-    deleteTodo(id);
+    dispatch(deleteTodo(id));
+  };
+
+  const updateItem = () => {
+    dispatch(updateTodo(index));
   };
   
-  const updateItem = () => {
-    updateTodo(index);
-  };
   return (
     <div className="Todo">
       <div onClick={updateItem}>

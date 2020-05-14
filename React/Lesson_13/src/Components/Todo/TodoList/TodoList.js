@@ -2,60 +2,39 @@ import React, { useState } from "react";
 import Todo from "../Todo/Todo";
 import "./TodoList.css";
 import HookForm from "../HookForm/HookForm";
+import { useSelector } from "react-redux";
 
 const TodoList = () => {
-  const [todoList, setTodoList] = useState([]);
   const [filter, setFilter] = useState("all");
 
-  const filterTasks = () => {
+  const filterTasks = (state) => {
     switch (filter) {
       case "all":
-        return todoList;
+        return state;
       case "completed":
-        return todoList.filter((todo) => todo.status === true);
+        return state.filter((todo) => todo.status === true);
       case "uncompleted":
-        return todoList.filter((todo) => todo.status === false);
+        return state.filter((todo) => todo.status === false);
       default:
         break;
     }
   };
 
+  const todoList = useSelector((state) => filterTasks(state.todo));
+
   const changeFilter = (e) => {
-    const type = e.target.dataset.filter;
-    setFilter(type);
-  };
-
-  const addTodo = (todo) => {
-    setTodoList([...todoList, todo]);
-  };
-
-  const deleteTodo = (id) => {
-    const newState = todoList.filter((todo) => todo.id !== id);
-    setTodoList(newState);
-  };
-
-  const updateTodo = (index) => {
-    const task = todoList[index];
-    task.status = true;
-    const newState = [...todoList];
-    newState.splice(index, 1, task);
-    setTodoList(newState);
+    setFilter(e.target.dataset.filter);
   };
 
   return (
     <div className="TodoList">
       <h1 className="TodoList__title">Todo List</h1>
-      <HookForm addTodo={addTodo}/>
+      <HookForm />
       <ul className="TodoList__todos">
-        {filterTasks().length ? (
-          filterTasks().map((todo, index) => (
+        {todoList.length ? (
+          todoList.map((todo, index) => (
             <li key={todo.id}>
-              <Todo
-                {...todo}
-                deleteTodo={deleteTodo}
-                updateTodo={updateTodo}
-                index={index}
-              />
+              <Todo {...todo} index={index} />
             </li>
           ))
         ) : (

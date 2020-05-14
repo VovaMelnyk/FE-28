@@ -8,8 +8,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Counter/>
-        {/* <TodoList/> */}
+        {/* <Counter/> */}
+        <TodoList/>
       </>
     );
   }
