@@ -1,27 +1,18 @@
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from "../types";
+import { createReducer } from "@reduxjs/toolkit";
+import { addTodo, deleteTodo, updateTodo } from "../actions/todo";
 
-const initialState = [];
+export default createReducer([], {
+  [addTodo]: (state, action) => [...state, action.payload],
+  [deleteTodo]: (state, action) =>
+    state.filter((el) => el.id !== action.payload),
+  [updateTodo]: (state, action) => {
+    const editedElement = { ...state[action.payload], status: true };
+    state[action.payload] = editedElement;
+  },
+});
 
-export default (state = initialState, { type, payload }) => {
-  switch (type) {
-    case ADD_TODO:
-      return [...state, payload];
-    case DELETE_TODO:
-      return state.filter((todo) => todo.id !== payload);
-    case UPDATE_TODO:
-      return update(state, payload);
-    default:
-      return state;
-  }
-};
-
-const update = (state, payload) => {
-  // const task = state[payload];
-  // task.status = true;
-  // const newState = [...state];
-  // newState.splice(payload, 1, task);
-  // return newState;
-  const newState = [...state];
-  newState[payload] = { ...newState[payload], status: true };
-  return newState;
-};
+// export default createReducer([], {
+//   [addTodo]: (state, action) => {
+//     state.push(action.payload)
+//   },
+// });

@@ -1,13 +1,11 @@
 import { INCREMENT, DECREMENT, RESET } from "../types";
+import { createAction } from "@reduxjs/toolkit";
 
-export const plus = () => ({
-  type: INCREMENT,
-});
+export const plus = createAction(INCREMENT);
 
-export const minus = () => ({
-  type: DECREMENT,
-});
+export const minus = createAction(DECREMENT);
 
-export const reset = () => ({
-  type: RESET,
-});
+export const reset = createAction(RESET);
+
+console.log(reset());
+console.log(reset);
