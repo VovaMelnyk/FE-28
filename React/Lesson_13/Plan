@@ -1,4 +1,11 @@
-npm install @reduxjs/toolkit
-configureStore()
-createAction()
-createReducer()
+0) Middleware
+1) add logger middleware (npm i redux-logger)
+2) create own logger (npm deep-object-diff)
+3) connect thunk (npm install redux-thunk)
+4) run local server (npm init, npm install json-server, touch db.json, json-server --watch db.json --port 5001)
+5) create async action
+6) get request
+7) post request
+8) put request
+9) delete request
+10) loaders and errors

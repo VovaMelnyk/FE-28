@@ -1,25 +1,16 @@
-import { createAction } from "@reduxjs/toolkit";
 
-export const plus = createAction("INCREMENT");
+import { INCREMENT, DECREMENT, RESET } from "../types";
 
-export const minus = createAction("DECREMENT");
+export const plus = (number) => ({
+  type: INCREMENT,
+  payload: number
+});
 
-export const reset = createAction("RESET");
+export const minus = () => ({
+  type: DECREMENT,
+});
 
-// import { INCREMENT, DECREMENT, RESET } from "../types";
+export const reset = () => ({
+  type: RESET,
+});
 
-// export const plus = (number) => ({
-//   type: INCREMENT,
-//   payload: number
-// });
-
-// export const minus = () => ({
-//   type: DECREMENT,
-// });
-
-// export const reset = () => ({
-//   type: RESET,
-// });
-
-// console.log(plus(5));
-// console.log(plus);

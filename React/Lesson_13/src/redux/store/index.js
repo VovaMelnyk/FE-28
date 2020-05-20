@@ -1,25 +1,14 @@
-// import { createStore } from "redux";
-// import { devToolsEnhancer } from "redux-devtools-extension";
-// import rootReducer from "../reducers";
-// import { counterReducer } from "../reducers/counter";
-import todo from "../reducers/todo";
-import number from "../slice/counter";
-import { configureStore } from "@reduxjs/toolkit";
+import { createStore, applyMiddleware } from "redux";
+import { devToolsEnhancer } from "redux-devtools-extension";
+import { composeWithDevTools } from "redux-devtools-extension"; // with middlewares
+import { logger } from "../middlewares/logger";
+import thunk from "redux-thunk";
+// import logger from "redux-logger";
+import rootReducer from "../reducers";
 
-const rootReducer = {
-  number,
-  todo,
-};
-
-// const rootReducer = {
-//   number: counterReducer,
-//   todo,
-// }; // without slice
-
-const globalState = configureStore({
-  reducer: rootReducer,
-  devTools: process.env.NODE_ENV !== "production",
-});
-// const globalState = createStore(rootReducer, devToolsEnhancer());
+const globalState = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk, logger))
+);
 
 export default globalState;

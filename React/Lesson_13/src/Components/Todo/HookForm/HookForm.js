@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../../redux/actions/todo";
+import { addTodo, addTodoAsync } from "../../../redux/actions/todo";
 import "./HookForm.css";
 
 const formInitialState = {
@@ -22,18 +22,12 @@ const HookForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const { title, author, priority, agree } = form;
+    const { agree } = form;
     if (!agree) {
       return;
     }
-    // const task = {
-    //   title,
-    //   author,
-    //   priority,
-    //   status: false,
-    //   id: Date.now(),
-    // };
-    dispatch(addTodo(form));
+    // dispatch(addTodo(form));
+    dispatch(addTodoAsync(form));
     setForm(formInitialState);
   };
   const { title, author, priority, agree } = form;
