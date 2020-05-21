@@ -1,12 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo, updateTodo } from "../../../redux/actions/todo";
+import {
+  deleteTodo,
+  updateTodo,
+  asyncDeleteTodo,
+} from "../../../redux/actions/todo";
 import "./Todo.css";
 const Todo = ({ status, title, author, priority, id, index }) => {
   const dispatch = useDispatch();
 
   const deleteItem = () => {
-    dispatch(deleteTodo(id));
+    dispatch(asyncDeleteTodo(id));
   };
 
   const updateItem = () => {

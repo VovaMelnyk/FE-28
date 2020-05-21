@@ -5,3 +5,12 @@ export const RESET = "RESET";
 export const ADD_TODO = "ADD_TODO";
 export const DELETE_TODO = "DELETE_TODO";
 export const UPDATE_TODO = "UPDATE_TODO";
+
+export const TODO_REQUEST_START = "TODO_REQUEST_START";
+export const TODO_REQUEST_SUCSSES = "TODO_REQUEST_SUCSSES";
+export const TODO_DELETE_START = "TODO_DELETE_START";
+export const TODO_DELETE_SUCSSES = "TODO_DELETE_SUCSSES";
+
+export const TODO_REQUEST_ERROR = "TODO_REQUEST_ERROR";
+export const ERROR_RESET = "ERROR_RESET";
+export const DELETE_ERROR = "DELETE_ERROR";

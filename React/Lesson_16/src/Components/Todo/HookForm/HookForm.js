@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../../redux/actions/todo";
+import { addTodo, asyncAddTodo } from "../../../redux/actions/todo";
 import "./HookForm.css";
 
 const formInitialState = {
@@ -26,7 +26,7 @@ const HookForm = () => {
     if (!agree) {
       return;
     }
-    dispatch(addTodo(form));
+    dispatch(asyncAddTodo(form));
     setForm(formInitialState);
   };
   const { title, author, priority, agree } = form;
