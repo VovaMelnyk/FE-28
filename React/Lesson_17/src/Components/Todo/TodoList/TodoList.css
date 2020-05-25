@@ -9,7 +9,10 @@
   display: flex;
   flex-direction: column;
   margin-top: 64px;
+  width: 900px;
+  margin: auto;
 }
+
 .TodoList__title {
   font-size: 2.5rem;
   font-weight: 100;

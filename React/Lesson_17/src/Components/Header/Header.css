@@ -1,0 +1,13 @@
+header {
+  background-color: #ff6b6b;
+  min-height: 100px;
+  margin-bottom: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-info p {
+  margin-bottom: 10px;
+  color: #fff;
+}
