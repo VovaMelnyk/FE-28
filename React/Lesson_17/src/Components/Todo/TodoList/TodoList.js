@@ -1,34 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 import Todo from "../Todo/Todo";
 import "./TodoList.css";
 import HookForm from "../HookForm/HookForm";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  totalTodoCount,
+  todoSelector,
+  hightTodoCount,
+  mediumTodoCount,
+  lowTodoCount,
+  todoSelectorWithTypes,
+} from "../../../redux/selectors";
+
+import {
+  setAll,
+  setComplete,
+  setUncompleted,
+} from "../../../redux/actions/type";
 
 const TodoList = () => {
-  const [filter, setFilter] = useState("all");
+  // const todoList = useSelector((state) => todoSelector(state));
+  const todoList = useSelector((state) => todoSelectorWithTypes(state));
 
-  const filterTasks = (state) => {
-    switch (filter) {
-      case "all":
-        return state;
-      case "completed":
-        return state.filter((todo) => todo.status === true);
-      case "uncompleted":
-        return state.filter((todo) => todo.status === false);
-      default:
-        break;
-    }
-  };
+  const total = useSelector((state) => totalTodoCount(state));
+  const hightPriorityTotal = useSelector((state) => hightTodoCount(state));
+  const mediumPriorityTotal = useSelector((state) => mediumTodoCount(state));
+  const lowPriorityTotal = useSelector((state) => lowTodoCount(state));
 
-  const todoList = useSelector((state) => filterTasks(state.todo));
+  const dispatch = useDispatch();
 
-  const changeFilter = (e) => {
-    setFilter(e.target.dataset.filter);
-  };
+  const setAllTodo = () => dispatch(setAll());
+  const setCompleteTodo = () => dispatch(setComplete());
+  const setUncompletedTodo = () => dispatch(setUncompleted());
 
   return (
     <div className="TodoList">
       <h1 className="TodoList__title">Todo List</h1>
+      <div className="total">
+        <p>Total: {total} </p>
+        <p>Hight: {hightPriorityTotal}</p>
+        <p>Medium: {mediumPriorityTotal}</p>
+        <p>Low: {lowPriorityTotal}</p>
+      </div>
       <HookForm />
       <ul className="TodoList__todos">
         {todoList.length ? (
@@ -45,21 +58,21 @@ const TodoList = () => {
         <button
           className="NewTodoForm__submit"
           data-filter="all"
-          onClick={changeFilter}
+          onClick={setAllTodo}
         >
           All
         </button>
         <button
           className="NewTodoForm__submit"
           data-filter="completed"
-          onClick={changeFilter}
+          onClick={setCompleteTodo}
         >
           Completed
         </button>
         <button
           className="NewTodoForm__submit"
           data-filter="uncompleted"
-          onClick={changeFilter}
+          onClick={setUncompletedTodo}
         >
           Uncompleted
         </button>
