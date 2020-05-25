@@ -1,3 +1,5 @@
-1) Async middleware
-2) Redux-thunk
-3) Redux-saga
+1) Cелектори (Приклад з юзером в хедері)
+2) Селектори і connect
+3) Селектори і hooks
+4) Reselect
+5) Селектор на основі кількох полів в стейті
