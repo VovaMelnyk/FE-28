@@ -1,6 +1,6 @@
 const initialState = {
   name: "Bob",
-  country: { name: "Belgium", id: 23 },
+  country: { id: 23, string: { name: "Belgium" } },
   account: {
     id: 21,
     premium: false,

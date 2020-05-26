@@ -2,33 +2,38 @@ import React, { useState } from "react";
 import Todo from "../Todo/Todo";
 import "./TodoList.css";
 import HookForm from "../HookForm/HookForm";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  todoTotalCount,
+  todoHighCount,
+  todoMediumCount,
+  todoLowCount,
+  todoFilterSelector,
+} from "../../../redux/selectors";
+
+import {
+  setAll,
+  setComplete,
+  setUncompleted,
+} from "../../../redux/actions/fileter";
 
 const TodoList = () => {
-  const [filter, setFilter] = useState("all");
+  const dispatch = useDispatch();
 
-  const filterTasks = (state) => {
-    switch (filter) {
-      case "all":
-        return state;
-      case "completed":
-        return state.filter((todo) => todo.status === true);
-      case "uncompleted":
-        return state.filter((todo) => todo.status === false);
-      default:
-        break;
-    }
-  };
+  const todoList = useSelector((state) => todoFilterSelector(state));
 
-  const todoList = useSelector((state) => filterTasks(state.todo));
-
-  const changeFilter = (e) => {
-    setFilter(e.target.dataset.filter);
-  };
+  const total = useSelector((state) => todoTotalCount(state));
+  const highTotal = useSelector((state) => todoHighCount(state));
+  const mediumTotal = useSelector((state) => todoMediumCount(state));
+  const lowTotal = useSelector((state) => todoLowCount(state));
 
   return (
     <div className="TodoList">
       <h1 className="TodoList__title">Todo List</h1>
+      <p>Total: {total}</p>
+      <p>High:{highTotal}</p>
+      <p>Medium:{mediumTotal}</p>
+      <p>Low: {lowTotal}</p>
       <HookForm />
       <ul className="TodoList__todos">
         {todoList.length ? (
@@ -44,22 +49,19 @@ const TodoList = () => {
       <div className="filters">
         <button
           className="NewTodoForm__submit"
-          data-filter="all"
-          onClick={changeFilter}
+          onClick={() => dispatch(setAll())}
         >
           All
         </button>
         <button
           className="NewTodoForm__submit"
-          data-filter="completed"
-          onClick={changeFilter}
+          onClick={() => dispatch(setComplete())}
         >
           Completed
         </button>
         <button
           className="NewTodoForm__submit"
-          data-filter="uncompleted"
-          onClick={changeFilter}
+          onClick={() => dispatch(setUncompleted())}
         >
           Uncompleted
         </button>
