@@ -37,7 +37,7 @@ server.use(express.urlencoded({ extended: true })); // to support URL-encoded bo
 
 // 1. Register a user
 server.post("/register", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, firstName, lastName } = req.body;
 
   try {
     // 1. Check if the user exist
