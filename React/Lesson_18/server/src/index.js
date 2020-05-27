@@ -26,7 +26,7 @@ server.use(cookieParser());
 
 server.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3001",
     credentials: true,
   })
 );
@@ -37,7 +37,7 @@ server.use(express.urlencoded({ extended: true })); // to support URL-encoded bo
 
 // 1. Register a user
 server.post("/register", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, firstName, lastName } = req.body;
 
   try {
     // 1. Check if the user exist
@@ -46,13 +46,15 @@ server.post("/register", async (req, res) => {
     // 2. If not user exist already, hash the password
     const hashedPassword = await hash(password, 10);
     // 3. Insert the user in "database"
-    const createdUser = { id: fakeDB.length, email };
+    const createdUser = { id: fakeDB.length, email, firstName, lastName };
     const accesstoken = createAccessToken(createdUser.id);
     createdUser.token = accesstoken;
 
     fakeDB.push({
       id: fakeDB.length,
       email,
+      firstName,
+      lastName,
       password: hashedPassword,
     });
 
@@ -117,3 +119,7 @@ server.post("/protected", async (req, res) => {
     });
   }
 });
+
+server.listen(process.env.PORT, () =>
+  console.log(`Server listening on port ${process.env.PORT}!`)
+);
