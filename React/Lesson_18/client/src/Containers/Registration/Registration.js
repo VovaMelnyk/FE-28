@@ -1,19 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./Registration.css";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { signUp } from "../../redux/operations/registration";
+
+const formState = { firstName: "", lastName: "", email: "", password: "" };
+
 const Registration = () => {
+  const [form, setForm] = useState(formState);
+  const dispatch = useDispatch();
+
+  const inputHandler = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+    setForm({ ...form, [name]: value });
+  };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signUp(form));
+  };
+
   return (
-    <form>
+    <form onSubmit={formSubmit}>
       <h3>Sign Up</h3>
 
       <div className="form-group">
         <label>First name</label>
-        <input type="text" className="form-control" placeholder="First name" />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="First name"
+          onChange={inputHandler}
+          name="firstName"
+        />
       </div>
 
       <div className="form-group">
         <label>Last name</label>
-        <input type="text" className="form-control" placeholder="Last name" />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Last name"
+          onChange={inputHandler}
+          name="lastName"
+        />
       </div>
 
       <div className="form-group">
@@ -23,6 +54,8 @@ const Registration = () => {
           className="form-control"
           placeholder="Enter email"
           autoComplete="off"
+          onChange={inputHandler}
+          name="email"
         />
       </div>
 
@@ -33,6 +66,8 @@ const Registration = () => {
           className="form-control"
           placeholder="Enter password"
           autoComplete="off"
+          onChange={inputHandler}
+          name="password"
         />
       </div>
 

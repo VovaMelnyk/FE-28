@@ -1,0 +1,3 @@
+export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
+
+export const SET_TOKEN = "SET_TOKEN";
