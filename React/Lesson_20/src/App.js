@@ -1,10 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import Form from "./Formik/Form";
+// import Form from "./Redux-form/Form";
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="auth-wrapper">
+      <div className="auth-inner">
+        <Form />
+      </div>
     </div>
   );
 }
