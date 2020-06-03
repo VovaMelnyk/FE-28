@@ -1,3 +1,13 @@
 1) Formik
-2) Formik and Yup
+add htmfor for all labels and id for inputs
+create formik object
+create validate function
+add touched event (onBlur = {formik.handleBlur})
+2) Formik and Yup (yarn add yup)
+add Yup object
+create form with Formik component
 3) Redux Form
+Create Field RenderField component 
+create validation 
+create onSubmit handler
+create form and connect to redux
