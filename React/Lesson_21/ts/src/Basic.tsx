@@ -192,6 +192,8 @@ const Basic = () => {
 
   //   console.log(add(4, 5));
 
+  //==========================================================
+
   //   const add = (a: number, b: number): number => {
   //     return a + b;
   //   };
@@ -203,6 +205,8 @@ const Basic = () => {
   //   };
 
   //   add(4, 5);
+
+  //==========================================================
 
   //   interface User {
   //     name: string;
@@ -221,6 +225,8 @@ const Basic = () => {
   //   const filterUser = users.filter((user: User) => user.age < 30);
   //   console.log(filterUser);
 
+  //==========================================================
+
   // default parameters
 
   //   function buildName(firstName: string, lastName = "Smith") {
@@ -231,6 +237,8 @@ const Basic = () => {
   //   let result = buildName("Bob", "Adams", "Sr.");
   //   let result = buildName("Bob", "Adams");
   //   console.log(result);
+
+  //==========================================================
 
   // Generic
 
@@ -249,6 +257,8 @@ const Basic = () => {
   //   });
 
   //   promiseResult.then((data) => console.log(data.toLocaleLowerCase().trim()));
+
+  //==========================================================
 
   //   function mergeObjects(a: object, b: object) {
   //     // return Object.assign({}, a, b);
@@ -293,6 +303,8 @@ const Basic = () => {
   //   console.log("Basic -> result", result.age);
   //   console.log("Basic -> result2", result2.year);
   //   console.log("Basic -> result3", result3);
+
+  //==========================================================
 
   //   function mergeObjects<T extends object, R extends object>(a: T, b: R) {
   //     return Object.assign({}, a, b);
