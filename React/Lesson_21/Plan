@@ -1,3 +1,39 @@
+npx create-react-app my-app --template typescript
 1) Typescript
 2) Create react project with Typescript
-3) React and Typescript
+3) TS Basic
+Simple types 
+boolean
+number
+string
+Complex
+Array
+Tuple
+Enum
+any
+void
+object
+
+imp exp typing
+
+Interfaces
+Optional Properties in Interfaces
+Readonly properties in Interfaces
+Extending Interfaces
+
+Functions
+Typing the function
+void
+Optional and Default Parameters
+Rest Parameter
+
+
+Class
+Simple class
+Public, private protected, readonly
+Inheritance
+Abstract Classes
+
+Type
+
+Generics
