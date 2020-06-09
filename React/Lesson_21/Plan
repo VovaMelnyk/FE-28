@@ -2,6 +2,8 @@ npx create-react-app my-app --template typescript
 1) Typescript
 2) Create react project with Typescript
 3) TS Basic
+imp exp typing
+
 Simple types 
 boolean
 number
@@ -14,7 +16,6 @@ any
 void
 object
 
-imp exp typing
 
 Interfaces
 Optional Properties in Interfaces
@@ -25,15 +26,7 @@ Functions
 Typing the function
 void
 Optional and Default Parameters
-Rest Parameter
-
-
-Class
-Simple class
-Public, private protected, readonly
-Inheritance
-Abstract Classes
-
-Type
 
 Generics
+
+
