@@ -6,7 +6,7 @@ import App from "./App";
 function Root(): ReactElement {
   return (
     <Provider store={store}>
-      <App />
+      <App title={"Title"}/>
     </Provider>
   );
 }

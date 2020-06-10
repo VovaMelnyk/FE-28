@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { addItem, deleteItem } from "./redux/actions/todo";
 import { RootState } from "./redux/reducers";
 import Basic from "./Basic";
-function App(): ReactElement {
+
+interface Props {
+  title: string;
+}
+
+function App({ title }: Props): ReactElement {
   const [value, setValue] = useState("");
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
@@ -28,6 +33,7 @@ function App(): ReactElement {
 
   return (
     <div className="App">
+      <h1>{title}</h1>
       <form onSubmit={onSubmit}>
         <input
           type="text"
