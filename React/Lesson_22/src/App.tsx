@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent, ReactElement } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, deleteItem } from "./redux/actions/todo";
-import Basic from "./Basic.tsx";
-function App() {
+import { RootState } from "./redux/reducers";
+import Basic from "./Basic";
+function App(): ReactElement {
   const [value, setValue] = useState("");
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
 
-  const inputHandler = (e) => {
+  const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const todo = {
       text: value,
@@ -21,7 +22,7 @@ function App() {
     setValue("");
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id: number) => {
     dispatch(deleteItem(id));
   };
 
