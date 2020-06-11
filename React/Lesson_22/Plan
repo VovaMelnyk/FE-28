@@ -1,10 +1,8 @@
 1) create Todo interface
-2) create todo state interface
 3) create actions interfaces
 
 4) Create actions ts
 5) Create reducer ts
 6) CombineReducer ts
-7) Provider ts ?
+7) Provider ts in Root
 8) UseSelector and component validation
-8) operation ts with thunk
