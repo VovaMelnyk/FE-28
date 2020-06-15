@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { auth } from "../config";
 
 const initialState = { email: "", password: "" };
 
@@ -10,7 +12,8 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    const { email, password } = user;
+    auth.signInWithEmailAndPassword(email, password);
     setUser(initialState);
   };
 
@@ -31,6 +34,7 @@ const Login = () => {
           value={user.password}
         />
         <button>Login</button>
+        <NavLink to="/registration">To Registration</NavLink>
       </form>
     </div>
   );

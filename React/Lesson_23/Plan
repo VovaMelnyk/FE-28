@@ -7,4 +7,3 @@ authStateChange
 writeToDB
 DeleteFromDB
 GetData
-updateData
