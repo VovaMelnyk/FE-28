@@ -1,0 +1,10 @@
+instal firebase
+connect to project with config
+register
+login
+logout
+authStateChange
+writeToDB
+DeleteFromDB
+GetData
+updateData
