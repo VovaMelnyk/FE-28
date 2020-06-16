@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../redux/operations";
 
 const initialState = { email: "", password: "" };
 
 const Login = () => {
   const [user, setUser] = useState(initialState);
+  const dispatch = useDispatch();
   const inputHandler = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    dispatch(loginUser(user));
     setUser(initialState);
   };
 
@@ -32,6 +36,7 @@ const Login = () => {
         />
         <button>Login</button>
       </form>
+      <NavLink to="/registration">Switch to register form</NavLink>
     </div>
   );
 };

@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../redux/operations";
+
 const initialState = { email: "", password: "" };
+
 const Register = () => {
   const [user, setUser] = useState(initialState);
+  const dispatch = useDispatch();
+
   const inputHandler = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    dispatch(registerUser(user))
     setUser(initialState);
   };
+
   return (
     <div>
       <h1>Registration</h1>

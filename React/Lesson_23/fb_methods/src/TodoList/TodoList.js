@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  writeDataToFireStore,
+  readDataFromFireStore,
+  deleteDataFromFireStore,
+} from "../redux/operations";
 
 const TodoList = () => {
   const [value, setValue] = useState("");
-  const [list, setList] = useState([]);
+  const dispatch = useDispatch();
+  const list = useSelector((state) => state.list);
+
+  useEffect(() => {
+    dispatch(readDataFromFireStore("todoCollection"));
+  }, []);
 
   const valueHandler = (e) => {
     setValue(e.target.value);
@@ -12,14 +23,13 @@ const TodoList = () => {
     e.preventDefault();
     const item = {
       text: value,
-      id: Date.now(),
     };
-    setList([...list, item]);
+    dispatch(writeDataToFireStore("todoCollection", item));
     setValue("");
   };
 
-  const deleteItem = (id) => {
-    setList(list.filter((el) => el.id !== id));
+  const deleteItem = (dbName, id) => {
+    dispatch(deleteDataFromFireStore(dbName, id));
   };
 
   return (
@@ -32,7 +42,9 @@ const TodoList = () => {
         {list.map((item) => (
           <li key={item.id}>
             {item.text}{" "}
-            <button onClick={() => deleteItem(item.id)}>Delete</button>
+            <button onClick={() => deleteItem("todoCollection", item.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
