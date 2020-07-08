@@ -44,14 +44,14 @@ export const CardPrice = styled.div`
 export const BuyBtn = styled.button`
   display: block;
   width: 100%;
-  background-color: ${props => (props.outlined ? "#fff" : "#1b1a20")};
-  color: ${props => (props.outlined ? "#1b1a20" : "#fff")};
+  background-color: ${(props) => (props.outlined ? "#fff" : "#1b1a20")};
+  color: ${(props) => (props.outlined ? "#1b1a20" : "#fff")};
   padding: 15px 0;
   margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   font-size: 16px;
-  border: ${props => (props.outlined ? "2px solid #1b1a20" : "none")};
+  border: ${(props) => (props.outlined ? "2px solid #1b1a20" : "none")};
 
   &:hover {
     background-color: #eabf00;
@@ -108,25 +108,14 @@ export const CardStopper = styled.div`
 //   }
 // `;
 
-// export const BuyBtn = styled.button`
-//   background: #fff;
-//   color: #333;
-//   font-size: 1em;
-//   margin: 1em;
-//   padding: 6px 12px;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-//   cursor: pointer;
-// `;
+export const BuyBtnPrimary = styled(BuyBtn)`
+  color: ${(props) => (props.outlined ? "#2e6da4" : "#fff")};
+  background: ${(props) => (props.outlined ? "#fff" : "#337ab7")};
+  border-color: #2e6da4;
+`;
 
-// export const BuyBtnPrimary = styled(BuyBtn)`
-//   color: #fff;
-//   background: #337ab7;
-//   border-color: #2e6da4;
-// `;
-
-// export const BuyBtnSuccess = styled(BuyBtn)`
-//   color: #fff;
-//   background-color: #5cb85c;
-//   border-color: #4cae4c;
-// `;
+export const BuyBtnSuccess = styled(BuyBtn)`
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+`;
